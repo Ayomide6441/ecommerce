@@ -44,6 +44,42 @@ module.exports = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        B900: {
+          DEFAULT: "hsl(var(--B900))",
+        },
+        B800: {
+          DEFAULT: "hsl(var(--B800))",
+        },
+        B700: {
+          DEFAULT: "hsl(var(--B700))",
+        },
+        B600: {
+          DEFAULT: "hsl(var(--B600))",
+        },
+        B500: {
+          DEFAULT: "hsl(var(--B500))",
+        },
+        B400: {
+          DEFAULT: "hsl(var(--B400))",
+        },
+        B300: {
+          DEFAULT: "hsl(var(--B300))",
+        },
+        B200: {
+          DEFAULT: "hsl(var(--B200))",
+        },
+        B100: {
+          DEFAULT: "hsl(var(--B100))",
+        },
+        W100: {
+          DEFAULT: "hsl(var(--W100))",
+        },
+        W200: {
+          DEFAULT: "hsl(var(--W200))",
+        },
+        W900: {
+          DEFAULT: "hsl(var(--W900))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
