@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 
 function Newsletter() {
   return (
-    <div className="mb-24 bg-[#F5F5F5] py-20">
+    <div className=" bg-[#F5F5F5] py-20">
       <div className="container flex justify-between">
         <div>
           <Text variant="heading-2">Join Our Newsletter</Text>

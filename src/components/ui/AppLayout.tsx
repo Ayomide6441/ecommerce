@@ -6,12 +6,9 @@ function AppLayout() {
   return (
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       <Header />
-
-      <div className="">
-        <main className="">
-          <Outlet />
-        </main>
-      </div>
+      <main className="">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );

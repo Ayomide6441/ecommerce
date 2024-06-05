@@ -10,8 +10,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import EmptyCart from "./EmptyCart";
 
 function Cart() {
+  const cart = [];
   return (
     <div>
       <div className="bg-W100 py-10">
@@ -34,10 +36,14 @@ function Cart() {
           </Breadcrumb>
         </div>
       </div>
-      <div className="flex container gap-40 pt-16 pb-44 justify-between items-center">
-        <CartList />
-        <OrderSummary />
-      </div>
+      {cart.length > 1 ? (
+        <div className="flex container gap-40 pt-16 pb-44 justify-between items-center">
+          <CartList />
+          <OrderSummary />
+        </div>
+      ) : (
+        <EmptyCart />
+      )}
     </div>
   );
 }
