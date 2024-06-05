@@ -9,7 +9,7 @@ function LatestList() {
         productName="Classic Monochrome Tees"
       />
       <ProductItem
-        image="../cover.png"
+        image="../cover2.png"
         price={27.0}
         inStock={true}
         productName="Monochromatic Wardrobe"

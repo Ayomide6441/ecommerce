@@ -77,7 +77,9 @@ function Header() {
                 className="pl-10"
               />
             </label>
-            <img src="../Cart.svg" alt="" className="h-7" />
+            <Link to="/cart">
+              <img src="../Cart.svg" alt="" className="h-7" />
+            </Link>
             <img src="../User.svg" alt="" className="h-7" />
           </div>
         </div>
