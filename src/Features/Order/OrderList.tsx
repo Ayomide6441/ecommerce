@@ -24,6 +24,34 @@ function OrderList() {
       price: 16,
       status: "Completed",
     },
+    {
+      image: "../../cover.png",
+      name: "Essential Neutrals",
+      date: "9 March 2023",
+      price: 16,
+      status: "Completed",
+    },
+    {
+      image: "../../cover2.png",
+      name: "Raw Black T-Shirt Lineup",
+      date: "27 July 2023",
+      price: 16,
+      status: "Processing",
+    },
+    {
+      image: "../../cover1.png",
+      name: "Essential Neutrals",
+      date: "9 March 2023",
+      price: 16,
+      status: "Completed",
+    },
+    {
+      image: "../../cover.png",
+      name: "Essential Neutrals",
+      date: "9 March 2023",
+      price: 16,
+      status: "Completed",
+    },
   ];
 
   return (

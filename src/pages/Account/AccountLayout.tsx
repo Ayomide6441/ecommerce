@@ -35,10 +35,10 @@ function AccountLayout() {
         </div>
       </div>
 
-      <div className="container flex divide-x gap-10 py-24">
-        <div>
+      <div className="container flex divide-x gap-10 py-24 sticky">
+        <div className="">
           <Tabs defaultValue="order">
-            <TabsList className="grid bg-transparent h-fit gap-3">
+            <TabsList className="grid bg-transparent h-fit gap-5">
               <TabsTrigger
                 value="order"
                 asChild
