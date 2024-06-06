@@ -1,7 +1,12 @@
 import { Text } from "./text";
 import { Link } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 function Footer() {
+  // const location = useLocation();
+  // const path = "local/path/proudct"; // Get the path from the URL
+  // const route = path.split("/").pop(); // Extract the last segment of the path
+  // console.log(route);
   return (
     <>
       <div className="container flex justify-between gap-52 py-24">

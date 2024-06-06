@@ -80,7 +80,9 @@ function Header() {
             <Link to="/cart">
               <img src="../Cart.svg" alt="" className="h-7" />
             </Link>
-            <img src="../User.svg" alt="" className="h-7" />
+            <Link to="/account">
+              <img src="../User.svg" alt="" className="h-7" />
+            </Link>
           </div>
         </div>
       </div>

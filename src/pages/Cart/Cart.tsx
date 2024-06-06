@@ -13,7 +13,7 @@ import {
 import EmptyCart from "./EmptyCart";
 
 function Cart() {
-  const cart = [];
+  const cart = ["yoo"];
   return (
     <div>
       <div className="bg-W100 py-10">
@@ -36,7 +36,7 @@ function Cart() {
           </Breadcrumb>
         </div>
       </div>
-      {cart.length > 1 ? (
+      {cart.length > 0 ? (
         <div className="flex container gap-40 pt-16 pb-44 justify-between items-center">
           <CartList />
           <OrderSummary />
