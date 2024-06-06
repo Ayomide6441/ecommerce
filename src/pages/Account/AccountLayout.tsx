@@ -1,43 +1,23 @@
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Text } from "@/components/ui/text";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import HeaderBreadCrumb from "@/components/ui/HeaderBreadCrumb";
 
 function AccountLayout() {
   return (
     <div>
-      <div className="bg-W100 py-10">
-        <div className="container flex flex-col gap-4">
-          <Text variant="heading-3">Account</Text>
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Text variant="body-1" asChild>
-                    <Link to="/">Home</Link>
-                  </Text>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Orders</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-      </div>
+      <HeaderBreadCrumb
+        previous={{
+          Home: "/",
+        }}
+        current="Order"
+        route="Account"
+      />
 
-      <div className="container flex divide-x gap-10 py-24 sticky">
-        <div className="">
-          <Tabs defaultValue="order">
+      <div className="container flex divide-x gap-10 py-24 relative ">
+        <div>
+          <Tabs defaultValue="order" className="sticky top-20">
             <TabsList className="grid bg-transparent h-fit gap-5">
               <TabsTrigger
                 value="order"
@@ -105,7 +85,7 @@ function AccountLayout() {
             </TabsList>
           </Tabs>
         </div>
-        <div className="pl-10 basis-3/4">
+        <div className="pl-10 basis-4/5 ">
           <Outlet />
         </div>
       </div>
