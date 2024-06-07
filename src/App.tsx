@@ -8,6 +8,10 @@ import Orders from "./pages/Account/Orders";
 import Password from "./pages/Account/Password";
 import Wishlist from "./pages/Account/Wishlist";
 import Address from "./pages/Account/Address";
+import Login from "./pages/Auth/Login";
+import SignUp from "./pages/Auth/SignUp";
+import ResetPassword from "./pages/Auth/ResetPassword";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +60,22 @@ const router = createBrowserRouter([
             element: <Wishlist />,
           },
         ],
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/password-reset",
+        element: <ResetPassword />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
       },
       // {
       //   path: "/menu",
