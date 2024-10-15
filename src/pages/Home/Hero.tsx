@@ -4,7 +4,7 @@ import { Text } from "@/components/ui/text";
 
 function Hero() {
   return (
-    <div className="bg-[#F5F5F5] pt-10 mb-24">
+    <div className="bg-[#F5F5F5] py-20 md:pt-10 md:pb-0 mb-24">
       <div className="container flex justify-between items-center">
         <div className="flex flex-col gap-10">
           <div>
@@ -20,7 +20,7 @@ function Hero() {
             </Link>
           </Button>
         </div>
-        <img src="../Hero.png" alt="" />
+        <img src="../Hero.png" alt="" className="hidden md:block" />
       </div>
     </div>
   );

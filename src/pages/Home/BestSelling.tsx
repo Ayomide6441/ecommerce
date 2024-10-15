@@ -3,12 +3,12 @@ import { Text } from "@/components/ui/text";
 
 function BestSelling() {
   return (
-    <div className="container mb-24 flex flex-col gap-10">
+    <div className="container mb-24 flex flex-col ">
       <div className="text-center">
         <Text variant="label-2">Shop Now</Text>
         <Text variant="heading-2">Best Selling</Text>
       </div>
-      <div className="flex justify-between">
+      <div className="flex flex-wrap justify-center gap-10">
         <ProductItem
           image="../cover.png"
           price={35.0}
@@ -26,6 +26,30 @@ function BestSelling() {
           price={22.0}
           inStock={true}
           productName="Essential Neutrals"
+        />
+        <ProductItem
+          image="../cover.png"
+          price={35.0}
+          inStock={true}
+          productName="Classic Monochrome Tees"
+        />
+        <ProductItem
+          image="../cover.png"
+          price={35.0}
+          inStock={true}
+          productName="Classic Monochrome Tees"
+        />
+        <ProductItem
+          image="../cover.png"
+          price={35.0}
+          inStock={true}
+          productName="Classic Monochrome Tees"
+        />
+        <ProductItem
+          image="../cover.png"
+          price={35.0}
+          inStock={true}
+          productName="Classic Monochrome Tees"
         />
         <ProductItem
           image="../cover.png"
