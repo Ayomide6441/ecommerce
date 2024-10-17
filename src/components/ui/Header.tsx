@@ -22,7 +22,7 @@ function Header() {
       <div className="container">
         <div className="flex justify-between py-4">
           <img src="../Header.png" alt="Header logo" />
-          <NavigationMenu className="">
+          <NavigationMenu className="hidden">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink
