@@ -7,10 +7,9 @@ function Footer() {
   // const path = "local/path/proudct"; // Get the path from the URL
   // const route = path.split("/").pop(); // Extract the last segment of the path
   // console.log(route);
-  return;
   return (
     <>
-      <div className="container flex justify-between gap-52 py-24">
+      <div className="container flex justify-between gap-52 py-24 overflow-hidden">
         <div className="flex flex-col gap-6 basis-1/4">
           <img src="../Footer.png" alt="" className="w-40 h-auto" />
           <Text variant="body-1">

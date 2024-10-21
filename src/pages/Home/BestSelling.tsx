@@ -8,7 +8,7 @@ function BestSelling() {
         <Text variant="label-2">Shop Now</Text>
         <Text variant="heading-2">Best Selling</Text>
       </div>
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid md:grid-cols-3 grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
         {new Array(6).fill(0).map((_, i) => {
           return (
             <div className="grid place-items-center" key={i}>

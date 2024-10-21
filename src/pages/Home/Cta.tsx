@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Cta() {
   return (
-    <div className="mb-24 bg-gradient-to-r from-[#F5F5F5] to-white pb-4 border border-[#F5F5F5]">
+    <div className="mb-24 bg-gradient-to-r from-[#F5F5F5] to-white py-20 md:py-0 md:pb-4 border border-[#F5F5F5]">
       <div className="container flex items-center justify-between">
         <div className="flex flex-col gap-6 w-fit">
           <Text variant="heading-2">Browse Our Fashion Paradise!</Text>
@@ -21,7 +21,11 @@ function Cta() {
             </Link>
           </Button>
         </div>
-        <img src="../CtaImage.png" alt="" className="h-[300px]" />
+        <img
+          src="../CtaImage.png"
+          alt=""
+          className="h-[300px] hidden md:block"
+        />
       </div>
     </div>
   );
