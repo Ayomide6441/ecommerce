@@ -22,9 +22,9 @@ function Footer() {
           </div>
         </div>
         <div className="flex basis-2/4 justify-between">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3 md:gap-6">
             <Text variant="body-2">SUPPORT</Text>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col  gap-2 md:gap-3">
               <li>
                 <Text variant="body-2" asChild>
                   <Link to="/">FAQ</Link>
@@ -44,7 +44,7 @@ function Footer() {
           </div>
           <div className="flex flex-col gap-6">
             <Text variant="body-2">COMPANY</Text>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col  gap-2 md:gap-3">
               <li>
                 <Text variant="body-2" asChild>
                   <Link to="/">About us</Link>
@@ -64,7 +64,7 @@ function Footer() {
           </div>
           <div className="flex flex-col gap-6">
             <Text variant="body-2">SHOP</Text>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col  gap-2 md:gap-3">
               <li>
                 <Text variant="body-2" asChild>
                   <Link to="/">My Account</Link>
