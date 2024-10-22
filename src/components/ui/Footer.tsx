@@ -42,7 +42,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3 md:gap-6">
             <Text variant="body-2">COMPANY</Text>
             <ul className="flex flex-col  gap-2 md:gap-3">
               <li>
@@ -62,7 +62,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3 md:gap-6">
             <Text variant="body-2">SHOP</Text>
             <ul className="flex flex-col  gap-2 md:gap-3">
               <li>
