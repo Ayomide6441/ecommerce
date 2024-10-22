@@ -21,9 +21,13 @@ function Header() {
       </div>
       <div className="container">
         <div className="flex justify-between py-4">
-          <img src="../Header.png" alt="Header logo" />
-          <NavigationMenu className="hidden">
-            <NavigationMenuList>
+          <img
+            src="../Header.png"
+            alt="Header logo"
+            className="w-28 h-auto sm:w-auto"
+          />
+          <NavigationMenu className="hidden min-[1020px]:block">
+            <NavigationMenuList className="gap-0 lg:gap-3">
               <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
@@ -65,16 +69,16 @@ function Header() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex gap-6 items-center">
+          <div className="flex gap-3 items-center">
             <label htmlFor="search" className="relative">
-              <div className="absolute top-2 bottom-0 left-2">
+              <div className="sm:absolute sm:top-2 sm:bottom-0 sm:left-2">
                 <img src="../Search.svg" alt="" className="max-w-10" />
               </div>
               <Input
                 id="search"
                 type="text"
                 placeholder="Search products"
-                className="pl-10"
+                className="pl-10 hidden sm:block"
               />
             </label>
             <Link to="/cart">
