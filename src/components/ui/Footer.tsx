@@ -9,8 +9,8 @@ function Footer() {
   // console.log(route);
   return (
     <>
-      <div className="container flex justify-between gap-52 py-24 overflow-hidden">
-        <div className="flex flex-col gap-6 basis-1/4">
+      <div className="container grid sm:grid-cols-1 md:grid-cols-2 lg:flex justify-between gap-10 md:gap-20 sm:py-24 py-10">
+        <div className="flex flex-col gap-4 md:gap-6 basis-1/4">
           <img src="../Footer.png" alt="" className="w-40 h-auto" />
           <Text variant="body-1">
             DevCut is a YouTube channel for practical project-based learning.
@@ -83,7 +83,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col gap-6 basis-1/4">
+        <div className="flex flex-col gap-4 md:gap-6 basis-1/4">
           <Text variant="body-2">ACCEPTED PAYMENTS</Text>
           <div className="flex">
             <img src="../Mastercard.svg" alt="" />

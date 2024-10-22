@@ -4,7 +4,7 @@ import { Text } from "@/components/ui/text";
 function BestSelling() {
   return (
     <div className="container mb-24 flex flex-col ">
-      <div className="text-center">
+      <div className="text-center mb-10">
         <Text variant="label-2">Shop Now</Text>
         <Text variant="heading-2">Best Selling</Text>
       </div>
