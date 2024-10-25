@@ -20,35 +20,46 @@ function CartItem({
 }: CartItemProps) {
   return (
     <div className="flex items-center gap-3 md:gap-6 ">
-      <div className="bg-W100 w-24 h-24 flex justify-center items-center">
+      <div className="bg-W100 w-16 h-16 sm:w-24 sm:h-24 flex justify-center items-center">
         <img src={image} alt={name} className="" />
       </div>
-      <div className="flex flex-col gap-2 flex-1 ">
+      <div className="flex flex-col sm:gap-2 flex-1">
         <Text
           variant="body-2"
-          className="truncate w-full max-w-24 sm:max-w-full"
+          className="truncate w-full max-w-24 sm:max-w-full leading-3 sm:leading-none"
         >
           {name}
         </Text>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <div className="flex gap-2 items-center">
             <Text variant="body-1" className="hidden sm:block">
               Color
             </Text>
             <div
-              className={`rounded bg-[${color}] h-[8px] w-[8px]`}
+              className={`rounded bg-[${color}] h-[8px] w-[8px] leading-3 sm:leading-none`}
               style={{ backgroundColor: color }}
             ></div>
           </div>
-          <Text variant="body-1">—</Text>
-          <Text variant="body-1">
-            <span className="hidden sm:block">Size:</span> {size}
+          <Text variant="body-1" className="leading-3 sm:leading-none">
+            —
+          </Text>
+          <Text variant="body-1" className="flex items-center gap-1">
+            <span className="hidden sm:block leading-3 ">Size:</span> {size}
           </Text>
         </div>
+        <Text
+          variant="body-2"
+          className="sm:hidden block leading-3 sm:leading-none"
+        >
+          ${price}.00
+        </Text>
       </div>
-      <Text variant="body-2">${price}.00</Text>
+
+      <Text variant="body-2" className="hidden sm:block">
+        ${price}.00
+      </Text>
       <ItemCounter quantity={quantity} />
-      <div className="bg-W100 p-1">
+      <div className="bg-W100 p-1 hidden sm:block">
         <img src="../X.svg" alt="" />
       </div>
     </div>

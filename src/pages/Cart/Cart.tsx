@@ -15,7 +15,7 @@ function Cart() {
         route="Cart"
       />
       {cart.length > 0 ? (
-        <div className="flex container flex-col lg:flex-row gap-10 lg:gap-40 pt-16 pb-44 justify-between items-center">
+        <div className="flex container flex-col lg:flex-row gap-10 lg:gap-40 pt-16 pb-10 justify-between items-center">
           <CartList />
           <OrderSummary />
         </div>
