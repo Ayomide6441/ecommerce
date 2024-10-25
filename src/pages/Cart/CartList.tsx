@@ -39,7 +39,7 @@ function CartList() {
   ];
 
   return (
-    <div className="basis-3/4">
+    <div className="w-full lg:basis-3/4">
       <div>
         <Text variant="heading-5" className="border-b pb-4 mb-6">
           Your Cart

@@ -3,7 +3,7 @@ import { Text } from "@/components/ui/text";
 
 function OrderSummary() {
   return (
-    <div className="border p-6 flex flex-col gap-6 basis-1/4">
+    <div className="border p-6 flex flex-col gap-6 w-full lg:basis-1/4">
       <Text variant="heading-5">Order Summary</Text>
       <div>
         <ul className="flex flex-col gap-2">
@@ -11,7 +11,7 @@ function OrderSummary() {
             <Text variant="body-1" className="text-B500">
               Subtotal
             </Text>
-            <Text variant="body-2">$ 90.00</Text>
+            <Text variant="body-2">$ 90000.00</Text>
           </li>
           <li className="flex justify-between items-center">
             <Text variant="body-1" className="text-B500">
