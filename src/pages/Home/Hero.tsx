@@ -12,7 +12,7 @@ function Hero() {
             <Text variant="body-1">Discover Our Newest Collection Today.</Text>
           </div>
           <Button asChild className="max-w-fit">
-            <Link to="/">
+            <Link to="/products">
               View Collections
               <span className="pl-4">
                 <img src="../Arrowright.svg" alt="" />

@@ -16,9 +16,7 @@ function ProductsLayout() {
         <FilterSection />
         <ProductsList />
       </div>
-      ;
     </>
   );
 }
-
 export default ProductsLayout;
