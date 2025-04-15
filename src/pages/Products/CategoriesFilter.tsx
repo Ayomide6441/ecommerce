@@ -44,8 +44,11 @@ type ItemId = (typeof items)[number]["id"];
 type FormValues = {
   items: ItemId[];
 };
+type Props = {
+  onChange: (selected: string[]) => void;
+};
 
-function CategoriesFilter() {
+function CategoriesFilter({ onChange }: Props) {
   // 3. Pass form type to useForm
   const form = useForm<FormValues>({
     defaultValues: {
@@ -53,12 +56,12 @@ function CategoriesFilter() {
     },
   });
 
-  function onChange(data: FormValues) {
-    console.log(JSON.stringify(data, null, 2));
+  function handleChange(data: { items: string[] }) {
+    onChange(data.items); // Pass selected categories up
   }
   return (
     <Form {...form}>
-      <form onChange={form.handleSubmit(onChange)} className="space-y-8">
+      <form onChange={form.handleSubmit(handleChange)} className="space-y-8">
         <FormField
           control={form.control}
           name="items"

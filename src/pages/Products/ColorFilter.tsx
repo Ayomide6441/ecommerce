@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const colors = [
   { id: "blue", value: "#AFCBFF" },
@@ -7,8 +7,16 @@ const colors = [
   { id: "brightBlue", value: "#3B82F6" },
 ];
 
-export default function ColorFilter() {
+type Props = {
+  onChange: (selected: string[]) => void;
+};
+
+export default function ColorFilter({ onChange }: Props) {
   const [selectedColor, setSelectedColor] = useState("");
+
+  useEffect(() => {
+    onChange(selectedColor ? [selectedColor] : []);
+  }, [selectedColor, onChange]);
 
   return (
     <div>
@@ -28,7 +36,7 @@ export default function ColorFilter() {
               className="sr-only"
             />
             <span
-              className={`w-6 h-6 rounded-full border-2 border-transparent`}
+              className="w-6 h-6 rounded-full border-2 border-transparent"
               style={{ backgroundColor: color.value }}
             ></span>
             {selectedColor === color.id && (

@@ -2,11 +2,18 @@
 "use client";
 
 import * as Slider from "@radix-ui/react-slider";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { Label } from "@/components/ui/label";
+type Props = {
+  onChange: (selected: [number, number]) => void;
+};
 
-export default function PriceRangeFilter() {
-  const [range, setRange] = useState([2000, 8000]);
+export default function PriceRangeFilter({ onChange }: Props) {
+  const [range, setRange] = useState<[number, number]>([2000, 8000]);
+  useEffect(() => {
+    // Pass as array to stay consistent with FilterValues type
+    onChange(range);
+  }, [range, onChange]);
 
   return (
     <div className="space-y-4 max-w-md w-full">
@@ -18,7 +25,7 @@ export default function PriceRangeFilter() {
         max={10000}
         step={50}
         value={range}
-        onValueChange={setRange}
+        onValueChange={(value) => setRange(value as [number, number])}
       >
         <Slider.Track className="bg-muted-foreground/20 relative grow rounded-full h-1">
           <Slider.Range className="absolute bg-primary rounded-full h-full" />

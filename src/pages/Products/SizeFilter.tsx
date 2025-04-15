@@ -1,10 +1,16 @@
 import { Text } from "@/components/ui/text";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const sizes = ["S", "M", "L", "XL", "XXL"];
-
-export default function SizeFilter() {
+type Props = {
+  onChange: (selected: string[]) => void;
+};
+export default function SizeFilter({ onChange }: Props) {
   const [selectedSize, setSelectedSize] = useState("");
+
+  useEffect(() => {
+    onChange(selectedSize ? [selectedSize] : []);
+  }, [selectedSize, onChange]);
 
   return (
     <div>
