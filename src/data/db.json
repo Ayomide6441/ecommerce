@@ -1,0 +1,81 @@
+{
+  "categories": [
+    { "id": 1, "name": "Best Selling" },
+    { "id": 2, "name": "Featured" },
+    { "id": 3, "name": "Latest" },
+    { "id": 4, "name": "T-Shirts" },
+    { "id": 5, "name": "Jackets" }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Classic White Tee",
+      "images": ["../cover1.png", "../cover2.png"],
+      "price": 25.0,
+      "stock": 15,
+      "details": "A classic white t-shirt made of cotton.",
+      "colors": ["white", "black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "categoryIds": [1, 4],
+      "rating": 4.5,
+      "status": true
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "John Doe",
+      "email": "john@example.com",
+      "password": "hashedpassword",
+      "addresses": [
+        {
+          "address": "123 Street",
+          "city": "Lagos",
+          "state": "Lagos",
+          "zipCode": "100001",
+          "country": "Nigeria"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "productId": 1,
+      "userId": 1,
+      "comment": "Great quality!",
+      "rating": 5
+    }
+  ],
+  "cartItems": [
+    {
+      "id": 1,
+      "userId": 1,
+      "productId": 1,
+      "quantity": 2,
+      "orderId": null
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "cartItemIds": [1],
+      "status": "processing"
+    }
+  ],
+  "wishlists": [
+    {
+      "id": 1,
+      "userId": 1,
+      "productId": 2
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "email": "admin@example.com",
+      "password": "adminpassword"
+    }
+  ]
+}

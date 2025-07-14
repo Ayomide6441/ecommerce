@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./components/ui/AppLayout";
 import Home from "./pages/Home/Home";
@@ -14,11 +15,11 @@ import ResetPassword from "./pages/Auth/ResetPassword";
 import ForgotPassword from "./pages/Auth/ForgotPassword";
 import ProductsLayout from "./pages/Products/ProductsLayout";
 
+const queryClient = new QueryClient();
+
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-    // errorElement: <Error />,
-
     children: [
       {
         path: "/",
@@ -33,13 +34,15 @@ const router = createBrowserRouter([
         element: <ProductsLayout />,
       },
       {
+        path: "/products/:productId",
+        element: <Orders />,
+      },
+      {
         path: "/account",
         element: <AccountLayout />,
-        // loader: () => {},
-
         children: [
           {
-            path: "",
+            index: true,
             element: <Orders />,
           },
 
@@ -82,31 +85,16 @@ const router = createBrowserRouter([
         path: "/forgot-password",
         element: <ForgotPassword />,
       },
-      // {
-      //   path: "/menu",
-      //   element: <Menu />,
-      //   loader: menuLoader,
-      //   errorElement: <Error />,
-      // },
-      // { path: "/cart", element: <Cart /> },
-      // {
-      //   path: "/order/new",
-      //   element: <CreateOrder />,
-      //   action: createOrderAction,
-      // },
-      // {
-      //   path: "/order/:orderId",
-      //   element: <Order />,
-      //   loader: orderLoader,
-      //   errorElement: <Error />,
-      //   action: updateOrderAction,
-      // },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
