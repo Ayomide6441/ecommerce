@@ -34,7 +34,7 @@ function ProductsList({ filters }: Props) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
       {products.map((product: Product) => (
-        <Link key={product.id} to={`/products/${product.id}`}>
+        <Link key={product.id} to={`/products/${product.id}`} pref>
           <ProductItem
             image={product.images[0]}
             price={product.price}

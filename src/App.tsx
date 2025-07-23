@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./components/ui/AppLayout";
 import Home from "./pages/Home/Home";
@@ -14,6 +15,7 @@ import SignUp from "./pages/Auth/SignUp";
 import ResetPassword from "./pages/Auth/ResetPassword";
 import ForgotPassword from "./pages/Auth/ForgotPassword";
 import ProductsLayout from "./pages/Products/ProductsLayout";
+import Product from "./pages/Products/Product";
 
 const queryClient = new QueryClient();
 
@@ -35,7 +37,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/products/:productId",
-        element: <Orders />,
+        element: <Product />,
+        loader: async ({ params: { productId } }) => {
+          await queryClient.prefetchQuery({
+            queryKey: ["product", productId],
+            queryFn: async () => {
+              const res = await fetch(
+                `http://localhost:8000/products/${productId}`
+              );
+              if (!res.ok) throw new Error("Network error");
+              return res.json();
+            },
+          });
+          return null;
+        },
       },
       {
         path: "/account",
@@ -93,6 +108,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

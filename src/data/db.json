@@ -1,6 +1,6 @@
 {
   "categories": [
-    { "id": 1, "name": "Best Selling" },
+    { "id": 1, "name": "Best goat" },
     { "id": 2, "name": "Featured" },
     { "id": 3, "name": "Latest" },
     { "id": 4, "name": "T-Shirts" },
@@ -11,12 +11,77 @@
       "id": 1,
       "name": "Classic White Tee",
       "images": ["../cover1.png", "../cover2.png"],
+      "price": 27.0,
+      "stock": 15,
+      "details": "Monochromatic Wardrobe",
+      "colors": ["white", "black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "categoryIds": [1, 3],
+      "rating": 4.5,
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "Classic White Tee",
+      "images": ["../cover2.png", "../cover6.png"],
       "price": 25.0,
       "stock": 15,
       "details": "A classic white t-shirt made of cotton.",
       "colors": ["white", "black"],
       "sizes": ["S", "M", "L", "XL"],
-      "categoryIds": [1, 4],
+      "categoryIds": [1, 3],
+      "rating": 4.5,
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Classic White Tee",
+      "images": ["../cover3.png", "../cover2.png"],
+      "price": 25.0,
+      "stock": 15,
+      "details": "A classic white t-shirt made of cotton.",
+      "colors": ["white", "black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "categoryIds": [1, 2],
+      "rating": 4.5,
+      "status": true
+    },
+    {
+      "id": 4,
+      "name": "Classic White Tee",
+      "images": ["../cover4.png", "../cover2.png"],
+      "price": 25.0,
+      "stock": 15,
+      "details": "A classic white t-shirt made of cotton.",
+      "colors": ["white", "black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "categoryIds": [2, 3],
+      "rating": 4.5,
+      "status": true
+    },
+    {
+      "id": 5,
+      "name": "Classic White Tee",
+      "images": ["../cover5.png", "../cover2.png"],
+      "price": 25.0,
+      "stock": 15,
+      "details": "A classic white t-shirt made of cotton.",
+      "colors": ["white", "black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "categoryIds": [2, 3],
+      "rating": 4.5,
+      "status": true
+    },
+    {
+      "id": 6,
+      "name": "Classic White Tee",
+      "images": ["../cover6.png", "../cover2.png"],
+      "price": 25.0,
+      "stock": 15,
+      "details": "A classic white t-shirt made of cotton.",
+      "colors": ["white", "black"],
+      "sizes": ["S", "M", "L", "XL"],
+      "categoryIds": [1, 2],
       "rating": 4.5,
       "status": true
     }
@@ -25,6 +90,36 @@
     {
       "id": 1,
       "fullName": "John Doe",
+      "email": "john@example.com",
+      "password": "hashedpassword",
+      "addresses": [
+        {
+          "address": "123 Street",
+          "city": "Lagos",
+          "state": "Lagos",
+          "zipCode": "100001",
+          "country": "Nigeria"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullName": "Code Victor",
+      "email": "john@example.com",
+      "password": "hashedpassword",
+      "addresses": [
+        {
+          "address": "123 Street",
+          "city": "Lagos",
+          "state": "Lagos",
+          "zipCode": "100001",
+          "country": "Nigeria"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullName": "Ifeoluwa Onifade",
       "email": "john@example.com",
       "password": "hashedpassword",
       "addresses": [
@@ -45,6 +140,20 @@
       "userId": 1,
       "comment": "Great quality!",
       "rating": 5
+    },
+    {
+      "id": 1,
+      "productId": 1,
+      "userId": 2,
+      "comment": "Not that bad! I liked it",
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "productId": 1,
+      "userId": 3,
+      "comment": "Highly recommend",
+      "rating": 4
     }
   ],
   "cartItems": [

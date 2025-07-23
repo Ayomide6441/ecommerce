@@ -12,7 +12,7 @@ import {
 type urls = {
   previous: { [key: string]: string };
   current: string;
-  route: string;
+  route?: string;
 };
 
 function HeaderBreadCrumb({ previous, current, route }: urls) {
