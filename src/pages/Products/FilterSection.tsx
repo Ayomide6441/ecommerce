@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import CategoriesFilter from "./CategoriesFilter";
-import ColorFilter from "./ColorFilter";
+import ColorPicker from "../../components/ui/ColorPicker";
 import PriceRangeFilter from "./PriceRangeFilter";
 import SizeFilter from "./SizeFilter";
+
+const colorOptions = ["#AFCBFF", "#FFD88D", "#92B69E", "#3B82F6"];
 
 type FilterValues = {
   categories: string[];
@@ -33,7 +35,7 @@ function FilterSection({ onFilterChange }: Props) {
   return (
     <div className="border p-5 w-64 flex flex-col gap-10 ">
       <CategoriesFilter onChange={setCategories} />
-      <ColorFilter onChange={setColors} />
+      <ColorPicker colors={colorOptions} onChange={setColors} />
       <SizeFilter onChange={setSizes} />
       <PriceRangeFilter onChange={setPriceRange} />
     </div>

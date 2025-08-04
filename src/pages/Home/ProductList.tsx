@@ -7,13 +7,13 @@ function ProductList() {
     <Tabs defaultValue="featured" className="container mb-24">
       <TabsList className="mb-12 flex justify-center bg-transparent gap-3">
         <TabsTrigger
-          className="focus:border focus:px-6 focus:rounded-full shadow-none"
+          className="data-[state=active]:border data-[state=active]:px-6 data-[state=active]:rounded-full shadow-none"
           value="featured"
         >
           Featured
         </TabsTrigger>
         <TabsTrigger
-          className="focus:border focus:px-6 focus:rounded-full shadow-none"
+          className="data-[state=active]:border data-[state=active]:px-6 data-[state=active]:rounded-full shadow-none"
           value="latest"
         >
           Latest

@@ -21,7 +21,7 @@ function ProductsLayout() {
         current="Search"
         route="Products"
       />
-      <div className="container flex gap-10 mt-20 items-start ">
+      <div className="container flex gap-10 mt-20 items-start">
         <FilterSection onFilterChange={setFilters} />
         <ProductsList filters={filters} />
       </div>
