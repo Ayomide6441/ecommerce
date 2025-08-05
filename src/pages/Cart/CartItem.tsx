@@ -1,5 +1,6 @@
 import ItemCounter from "@/components/ui/ItemCounter";
 import { Text } from "@/components/ui/text";
+import { useState } from "react";
 
 type CartItemProps = {
   image: string;
@@ -18,6 +19,9 @@ function CartItem({
   size,
   price,
 }: CartItemProps) {
+  const [currQuantity, setQuantity] = useState<number>(quantity);
+  const [currPrice, setPrice] = useState<number>(price);
+  console.log(currQuantity);
   return (
     <div className="flex items-center gap-3 md:gap-6 ">
       <div className="bg-W100 w-16 h-16 sm:w-24 sm:h-24 flex justify-center items-center">
@@ -51,14 +55,16 @@ function CartItem({
           variant="body-2"
           className="sm:hidden block leading-3 sm:leading-none"
         >
-          ${price}.00
+          ${currPrice * currQuantity}.00
         </Text>
       </div>
 
       <Text variant="body-2" className="hidden sm:block">
-        ${price}.00
+        ${currPrice * currQuantity}.00
       </Text>
-      <ItemCounter quantity={quantity} />
+      <div className="w-32">
+        <ItemCounter quantity={currQuantity} onClick={setQuantity} />
+      </div>
       <div className="bg-W100 p-1 hidden sm:block">
         <img src="../X.svg" alt="" />
       </div>

@@ -26,7 +26,7 @@ export default function SizePicker({ onChange, sizes }: Props) {
               className="sr-only"
             />
             <span
-              className={`px-4 py-2 text-sm border rounded-md transition
+              className={`px-3 py- text-sm border rounded-md transition flex justify-center
                 ${
                   selectedSize === size
                     ? "border-black text-black"
