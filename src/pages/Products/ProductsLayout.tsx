@@ -19,7 +19,7 @@ function ProductsLayout() {
       <HeaderBreadCrumb
         previous={{ Home: "/" }}
         current="Search"
-        route="Products"
+        className="py-4"
       />
       <div className="container flex gap-10 mt-20 items-start">
         <FilterSection onFilterChange={setFilters} />
