@@ -16,6 +16,7 @@ import ResetPassword from "./pages/Auth/ResetPassword";
 import ForgotPassword from "./pages/Auth/ForgotPassword";
 import ProductsLayout from "./pages/Products/ProductsLayout";
 import Product from "./pages/Products/Product";
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 
 const queryClient = new QueryClient();
 
@@ -107,7 +108,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <TooltipProvider>
+        <RouterProvider router={router} />
+      </TooltipProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
