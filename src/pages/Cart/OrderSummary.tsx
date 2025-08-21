@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
+import { Link } from "react-router-dom";
 
 function OrderSummary() {
   return (
@@ -36,7 +37,9 @@ function OrderSummary() {
         </ul>
       </div>
       <Button>Checkout</Button>
-      <Button variant="link">Continue Shopping</Button>
+      <Button asChild variant="link">
+        <Link to="/products">Continue Shopping</Link>
+      </Button>
     </div>
   );
 }

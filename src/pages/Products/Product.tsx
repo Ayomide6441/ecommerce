@@ -4,7 +4,7 @@ import HeaderBreadCrumb from "@/components/ui/HeaderBreadCrumb";
 import { useProductDetail } from "@/Hooks/useProducts";
 import { Text } from "@/components/ui/text";
 import ColorPicker from "../../components/ui/ColorPicker";
-import SizePicker from "@/components/sizePicker";
+import SizePicker from "@/components/ui/sizePicker";
 import ItemCounter from "@/components/ui/ItemCounter";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

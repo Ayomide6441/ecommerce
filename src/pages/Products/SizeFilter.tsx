@@ -1,4 +1,4 @@
-import SizePicker from "@/components/sizePicker";
+import SizePicker from "@/components/ui/sizePicker";
 const availableSizes = ["S", "M", "L", "XL", "XXL"];
 type Props = {
   onChange: (selected: string[]) => void;
