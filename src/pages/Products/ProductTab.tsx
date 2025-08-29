@@ -1,7 +1,42 @@
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Text } from "@/components/ui/text";
+import { Star } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { useProductReview } from "@/Hooks/useProducts";
+
+// Star rating component
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-1">
+      {[...Array(5)].map((_, i) => (
+        <Star
+          key={i}
+          size={13}
+          className={`${
+            i < rating ? "fill-[#5C5F6A] text-[#5C5F6A]" : "text-gray-300"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
 
 function ProductTab() {
+  const { id } = useParams<{ id: string }>();
+  const [position, setPosition] = useState("bottom");
+  const { data: reviews } = useProductReview(id);
+  console.log(reviews);
   return (
     <Tabs defaultValue="details" className="flex gap-20 container mt-24">
       <TabsList variant="vertical" className="gap-2 mt-12">
@@ -52,7 +87,84 @@ function ProductTab() {
             </li>
           </ul>
         </TabsContent>
-        <TabsContent value="reviews">Reviews content</TabsContent>
+        <TabsContent value="reviews">
+          <Text variant="heading-5" className="mb-5">
+            Reviews
+          </Text>
+          <div className="flex items-baseline gap-3">
+            <Text variant="heading-2" className="">
+              4.2
+            </Text>
+            <Text variant="body-1" className="text-[#71747E]">
+              - 54 Reviews
+            </Text>
+          </div>
+          <div className="flex justify-between items-baseline py-6">
+            <Button variant="outline" className="">
+              <Text variant="body-1">Write a review</Text>
+            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Text variant="label-2">Sort By</Text>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-24">
+                <DropdownMenuRadioGroup
+                  value={position}
+                  onValueChange={setPosition}
+                >
+                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="bottom">
+                    Bottom
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="right">
+                    Right
+                  </DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          <Separator />
+
+          <div className="mt-6 flex flex-col gap-14">
+            {reviews?.map((review) => (
+              <Card key={review.id} className="border-0 shadow-none">
+                <CardContent className="flex items-start gap-4 p-0">
+                  {/* Avatar */}
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 font-medium text-sm text-gray-700">
+                    {review.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <Text
+                        variant="body-2"
+                        className="text-[14px] text-[#0E1422] font-medium leading-7"
+                      >
+                        {review.name}
+                      </Text>
+                      <StarRating rating={review.rating} />
+                    </div>
+                    <Text
+                      variant="label-2"
+                      className="text-[12px] font-normal text-[#5C5F6A]"
+                    >
+                      {review.date}
+                    </Text>
+                    <Text
+                      variant="body-1"
+                      className="mt-4 text-[14px] font-normal text-[#5C5F6A]"
+                    >
+                      {review.comment}
+                    </Text>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
       </div>
     </Tabs>
   );
