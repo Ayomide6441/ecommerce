@@ -14,6 +14,7 @@ import {
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useProductReview } from "@/Hooks/useProducts";
+import { formatRelativeDate } from "@/utils/helpers";
 
 // Star rating component
 function StarRating({ rating }: { rating: number }) {
@@ -31,12 +32,20 @@ function StarRating({ rating }: { rating: number }) {
     </div>
   );
 }
+function getAverageRating(reviews: { rating: number }[]): number {
+  if (reviews.length === 0) return 0;
 
+  const total = reviews.reduce((sum, review) => sum + review.rating, 0);
+  const avg = total / reviews.length;
+
+  return parseFloat(avg.toFixed(1));
+}
 function ProductTab() {
-  const { id } = useParams<{ id: string }>();
+  const { productId } = useParams<{ productId: string }>();
+
   const [position, setPosition] = useState("bottom");
-  const { data: reviews } = useProductReview(id);
-  console.log(reviews);
+  const { data: reviews } = useProductReview(productId);
+  const rating = reviews ? getAverageRating(reviews) : "";
   return (
     <Tabs defaultValue="details" className="flex gap-20 container mt-24">
       <TabsList variant="vertical" className="gap-2 mt-12">
@@ -93,10 +102,10 @@ function ProductTab() {
           </Text>
           <div className="flex items-baseline gap-3">
             <Text variant="heading-2" className="">
-              4.2
+              {rating}
             </Text>
             <Text variant="body-1" className="text-[#71747E]">
-              - 54 Reviews
+              - {reviews?.length} Reviews
             </Text>
           </div>
           <div className="flex justify-between items-baseline py-6">
@@ -131,7 +140,7 @@ function ProductTab() {
                 <CardContent className="flex items-start gap-4 p-0">
                   {/* Avatar */}
                   <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 font-medium text-sm text-gray-700">
-                    {review.name
+                    {review.user.fullName
                       .split(" ")
                       .map((n) => n[0])
                       .join("")}
@@ -143,21 +152,21 @@ function ProductTab() {
                         variant="body-2"
                         className="text-[14px] text-[#0E1422] font-medium leading-7"
                       >
-                        {review.name}
+                        {review.user.fullName}
                       </Text>
-                      <StarRating rating={review.rating} />
+                      <StarRating rating={review?.rating} />
                     </div>
                     <Text
                       variant="label-2"
                       className="text-[12px] font-normal text-[#5C5F6A]"
                     >
-                      {review.date}
+                      {formatRelativeDate(review.date)}
                     </Text>
                     <Text
                       variant="body-1"
                       className="mt-4 text-[14px] font-normal text-[#5C5F6A]"
                     >
-                      {review.comment}
+                      {review?.comment}
                     </Text>
                   </div>
                 </CardContent>

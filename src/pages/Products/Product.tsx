@@ -13,7 +13,7 @@ function Product() {
 
   // const [isModalOpen, setModalOpen] = useState(false);
   if (isLoading) return <div>Loading...</div>;
-  console.log(product);
+  // console.log(product);
   return (
     <>
       <HeaderBreadCrumb
