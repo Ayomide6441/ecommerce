@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Text } from "@/components/ui/text";
-import { Star } from "lucide-react";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -15,23 +15,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useProductReview } from "@/Hooks/useProducts";
 import { formatRelativeDate } from "@/utils/helpers";
+import StarRating from "@/components/ui/StarRating";
 
-// Star rating component
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-1">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          size={13}
-          className={`${
-            i < rating ? "fill-[#5C5F6A] text-[#5C5F6A]" : "text-gray-300"
-          }`}
-        />
-      ))}
-    </div>
-  );
-}
 function getAverageRating(reviews: { rating: number }[]): number {
   if (reviews.length === 0) return 0;
 
