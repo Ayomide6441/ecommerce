@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Text } from "@/components/ui/text";
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -11,8 +14,6 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
 import { useProductReview } from "@/Hooks/useProducts";
 import { formatRelativeDate } from "@/utils/helpers";
 import StarRating from "@/components/ui/StarRating";
@@ -25,14 +26,33 @@ function getAverageRating(reviews: { rating: number }[]): number {
 
   return parseFloat(avg.toFixed(1));
 }
+
 function ProductTab() {
   const { productId } = useParams<{ productId: string }>();
-
   const [position, setPosition] = useState("bottom");
+
   const { data: reviews } = useProductReview(productId);
   const rating = reviews ? getAverageRating(reviews) : "";
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Initialize state from query param
+  const [currentTab, setCurrentTab] = useState<string>(
+    searchParams.get("tab") || "details"
+  );
+
+  // Sync state → URL
+  useEffect(() => {
+    setSearchParams({ tab: currentTab });
+  }, [currentTab, setSearchParams]);
+
   return (
-    <Tabs defaultValue="details" className="flex gap-20 container mt-24">
+    <Tabs
+      value={currentTab}
+      defaultValue={currentTab}
+      onValueChange={setCurrentTab}
+      className="flex gap-20 container mt-24"
+    >
       <TabsList variant="vertical" className="gap-2 mt-12">
         <TabsTrigger value="details">Details</TabsTrigger>
         <TabsTrigger value="reviews">Reviews</TabsTrigger>
