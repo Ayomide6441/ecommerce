@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
@@ -14,26 +13,36 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useProductReview } from "@/Hooks/useProducts";
 import { formatRelativeDate } from "@/utils/helpers";
 import StarRating from "@/components/ui/StarRating";
 
-function getAverageRating(reviews: { rating: number }[]): number {
-  if (reviews.length === 0) return 0;
-
-  const total = reviews.reduce((sum, review) => sum + review.rating, 0);
-  const avg = total / reviews.length;
-
-  return parseFloat(avg.toFixed(1));
+interface User {
+  addresses: any[];
+  email: string;
+  fullName: string;
+  id: number;
+  password: string;
 }
 
-function ProductTab() {
-  const { productId } = useParams<{ productId: string }>();
+interface Review {
+  id: number;
+  productId: number;
+  userId: number;
+  comment: string;
+  rating: number;
+  date: string;
+  user: User;
+}
+
+type ReviewArray = Review[];
+
+type ProductTabProps = {
+  rating: number;
+  reviews: ReviewArray | undefined;
+};
+
+function ProductTab({ reviews, rating }: ProductTabProps) {
   const [position, setPosition] = useState("bottom");
-
-  const { data: reviews } = useProductReview(productId);
-  const rating = reviews ? getAverageRating(reviews) : "";
-
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Initialize state from query param
@@ -52,6 +61,8 @@ function ProductTab() {
     }
     setSearchParams(params, { replace: true });
   }, [currentTab, searchParams, setSearchParams]);
+
+  console.log(reviews);
 
   return (
     <Tabs

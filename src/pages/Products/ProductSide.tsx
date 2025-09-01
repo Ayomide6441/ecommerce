@@ -26,7 +26,33 @@ type Product = {
   categoryIds: number[];
 };
 
-function ProductSide({ product }: { product: Product }) {
+interface User {
+  addresses: any[];
+  email: string;
+  fullName: string;
+  id: number;
+  password: string;
+}
+
+interface Review {
+  id: number;
+  productId: number;
+  userId: number;
+  comment: string;
+  rating: number;
+  date: string;
+  user: User;
+}
+
+type ReviewArray = Review[];
+
+type ProductSideProps = {
+  product: Product;
+  rating: number;
+  reviews: ReviewArray | undefined;
+};
+
+function ProductSide({ product, rating, reviews }: ProductSideProps) {
   const price = product.price;
   const [searchParams, setSearchParams] = useSearchParams();
   const quantityUrl = parseInt(searchParams.get("quantity") || "1", 10);
@@ -34,7 +60,6 @@ function ProductSide({ product }: { product: Product }) {
   const [color, setColor] = useState<string>("");
   const [size, setSize] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(quantityUrl);
-  console.log(color, size, quantity);
   useEffect(() => {
     const params = new URLSearchParams(searchParams); // keep existing params
 
@@ -57,7 +82,7 @@ function ProductSide({ product }: { product: Product }) {
           <div className="flex gap-4 pt-2">
             <div className="bg-[#F6F6F6] rounded-full py-1 px-3 w-fit">
               <Text variant="label-1" className="text-[#5C5F6A]">
-                {product.rating} - 54 Reviews
+                {rating} - {reviews?.length} Reviews
               </Text>
             </div>
             <div className="border-2 border-[#F6F6F6] border- rounded-full py-1 px-4 w-fit">

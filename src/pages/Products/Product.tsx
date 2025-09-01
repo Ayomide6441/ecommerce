@@ -1,19 +1,29 @@
 import { useParams } from "react-router-dom";
 
 import HeaderBreadCrumb from "@/components/ui/HeaderBreadCrumb";
-import { useProductDetail } from "@/Hooks/useProducts";
+import { useProductDetail, useProductReview } from "@/Hooks/useProducts";
 
 import ProductCarousel from "./ProductCarousel";
 import ProductSide from "./ProductSide";
 import ProductTab from "./ProductTab";
 
+function getAverageRating(reviews: { rating: number }[]): number {
+  if (reviews.length === 0) return 0;
+
+  const total = reviews.reduce((sum, review) => sum + review.rating, 0);
+  const avg = total / reviews.length;
+
+  return parseFloat(avg.toFixed(1));
+}
+
 function Product() {
-  const { productId } = useParams();
+  const { productId } = useParams<{ productId: string }>();
   const { data: product, isLoading } = useProductDetail(productId);
 
   // const [isModalOpen, setModalOpen] = useState(false);
+  const { data: reviews } = useProductReview(productId);
+  const rating = reviews ? getAverageRating(reviews) : 0;
   if (isLoading) return <div>Loading...</div>;
-  // console.log(product);
   return (
     <>
       <HeaderBreadCrumb
@@ -23,10 +33,10 @@ function Product() {
       />
       <div className="container flex gap-28 mt-10 items-start ">
         <ProductCarousel images={product.images} />
-        <ProductSide product={product} />
+        <ProductSide product={product} rating={rating} reviews={reviews} />
       </div>
 
-      <ProductTab />
+      <ProductTab reviews={reviews} rating={rating} />
     </>
   );
 }

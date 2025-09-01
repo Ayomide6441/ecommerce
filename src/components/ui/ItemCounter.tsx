@@ -29,9 +29,9 @@ function ItemCounter({ quantity, onClick }: CounterProps) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="lucide lucide-minus-icon lucide-minus"
         >
           <path d="M5 12h14" />
@@ -46,9 +46,9 @@ function ItemCounter({ quantity, onClick }: CounterProps) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="lucide lucide-plus-icon lucide-plus"
         >
           <path d="M5 12h14" />
