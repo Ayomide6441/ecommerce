@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 type Props = {
   colors: string[];
-  onChange: (selected: string[]) => void;
+  onChange: (selected: string) => void;
 };
 
 export default function ColorPicker({ colors, onChange }: Props) {
-  const [selectedColor, setSelectedColor] = useState<string>("");
-
+  const [searchParams] = useSearchParams();
+  const [selectedColor, setSelectedColor] = useState<string>(
+    searchParams.get("color") || ""
+  );
   useEffect(() => {
-    onChange(selectedColor ? [selectedColor] : []);
+    onChange(selectedColor ? selectedColor : "");
   }, [selectedColor, onChange]);
 
   return (

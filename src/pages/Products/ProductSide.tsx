@@ -3,12 +3,13 @@ import ColorPicker from "../../components/ui/ColorPicker";
 import SizePicker from "@/components/ui/sizePicker";
 import ItemCounter from "@/components/ui/ItemCounter";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useSearchParams } from "react-router-dom";
 const colorOptions = ["#AFCBFF", "#FFD88D", "#92B69E", "#3B82F6"];
 
 type Product = {
@@ -26,11 +27,27 @@ type Product = {
 };
 
 function ProductSide({ product }: { product: Product }) {
-  const [colors, setColors] = useState<string[]>([""]);
-  const [size, setSize] = useState<string[]>([""]);
-  // page data
-  const [price, setPrice] = useState<number>(product.price);
-  const [quantity, setQuantity] = useState<number>(1);
+  const price = product.price;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const quantityUrl = parseInt(searchParams.get("quantity") || "1", 10);
+
+  const [color, setColor] = useState<string>("");
+  const [size, setSize] = useState<string>("");
+  const [quantity, setQuantity] = useState<number>(quantityUrl);
+  console.log(color, size, quantity);
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams); // keep existing params
+
+    // update only the ones you care about
+    color ? params.set("color", color) : params.delete("color");
+    size ? params.set("size", size) : params.delete("size");
+    quantity
+      ? params.set("quantity", quantity.toString())
+      : params.delete("quantity");
+
+    // ✅ keep other params untouched
+    setSearchParams(params, { replace: true });
+  }, [color, size, quantity, searchParams, setSearchParams]);
 
   return (
     <div className="w-1/2 flex gap-10">
@@ -58,7 +75,7 @@ function ProductSide({ product }: { product: Product }) {
           >
             Available Color
           </Text>
-          <ColorPicker colors={colorOptions} onChange={setColors} />
+          <ColorPicker colors={colorOptions} onChange={setColor} />
         </div>
         <div>
           <Text
@@ -94,7 +111,7 @@ function ProductSide({ product }: { product: Product }) {
               stroke-width="1"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-heart-icon lucide-heart "
+              className="lucide lucide-heart-icon lucide-heart "
             >
               <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
             </svg>

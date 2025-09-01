@@ -43,8 +43,15 @@ function ProductTab() {
 
   // Sync state → URL
   useEffect(() => {
-    setSearchParams({ tab: currentTab });
-  }, [currentTab, setSearchParams]);
+    const params = new URLSearchParams(searchParams);
+    // setSearchParams({ tab: currentTab });
+    if (currentTab) {
+      params.set("tab", currentTab);
+    } else {
+      params.delete("tab");
+    }
+    setSearchParams(params, { replace: true });
+  }, [currentTab, searchParams, setSearchParams]);
 
   return (
     <Tabs

@@ -1,15 +1,19 @@
 import { Text } from "@/components/ui/text";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 type Props = {
   sizes: string[];
-  onChange: (selected: string[]) => void;
+  onChange: (selected: string) => void;
 };
 export default function SizePicker({ onChange, sizes }: Props) {
-  const [selectedSize, setSelectedSize] = useState("");
+  const [searchParams] = useSearchParams();
+  const [selectedSize, setSelectedSize] = useState<string>(
+    searchParams.get("size") || ""
+  );
 
   useEffect(() => {
-    onChange(selectedSize ? [selectedSize] : []);
+    onChange(selectedSize ? selectedSize : "");
   }, [selectedSize, onChange]);
 
   return (
