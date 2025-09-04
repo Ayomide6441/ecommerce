@@ -21,11 +21,13 @@ function Header() {
       </div>
       <div className="container">
         <div className="flex justify-between py-4">
-          <img
-            src="../Header.png"
-            alt="Header logo"
-            className="w-28 h-auto sm:w-auto"
-          />
+          <Link to="/">
+            <img
+              src="../Header.png"
+              alt="Header logo"
+              className="w-28 h-auto sm:w-auto"
+            />
+          </Link>
           <NavigationMenu className="hidden min-[1020px]:block">
             <NavigationMenuList className="gap-0 lg:gap-3">
               <NavigationMenuItem>
