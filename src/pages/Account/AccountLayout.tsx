@@ -17,7 +17,10 @@ function AccountLayout() {
 
       <div className="container divide-x gap-10 py-24 relative flex">
         <Tabs defaultValue="order">
-          <TabsList className="grid bg-transparent h-fit gap-5 sticky top-20">
+          <TabsList
+            variant="vertical"
+            className="bg-transparent h-fit gap-5 sticky top-20"
+          >
             <TabsTrigger
               value="order"
               asChild
