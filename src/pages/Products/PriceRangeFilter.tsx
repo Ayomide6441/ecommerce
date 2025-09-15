@@ -15,8 +15,8 @@ export default function PriceRangeFilter({ value, onChange }: Props) {
 
       <Slider.Root
         className="relative flex items-center select-none touch-none w-full h-6"
-        min={500}
-        max={10000}
+        min={50}
+        max={1000}
         step={50}
         value={value} // controlled value from parent
         onValueChange={(val) => onChange(val as [number, number])}
