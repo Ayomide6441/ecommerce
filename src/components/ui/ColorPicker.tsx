@@ -1,44 +1,62 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 
-type Props = {
+type SingleProps = {
   colors: string[];
+  multiple?: false;
   onChange: (selected: string) => void;
 };
 
-export default function ColorPicker({ colors, onChange }: Props) {
-  const [searchParams] = useSearchParams();
-  const [selectedColor, setSelectedColor] = useState<string>(
-    searchParams.get("color") || ""
-  );
+type MultiProps = {
+  colors: string[];
+  multiple: true;
+  onChange: (selected: string[]) => void;
+};
+
+type Props = SingleProps | MultiProps;
+
+export default function ColorPicker({ colors, onChange, multiple }: Props) {
+  const [selectedColors, setSelectedColors] = useState<string[]>([]);
+
   useEffect(() => {
-    onChange(selectedColor ? selectedColor : "");
-  }, [selectedColor, onChange]);
+    if (multiple) {
+      (onChange as (val: string[]) => void)(selectedColors);
+    } else {
+      (onChange as (val: string) => void)(selectedColors[0] || "");
+    }
+  }, [selectedColors, multiple, onChange]);
+
+  const toggleColor = (color: string) => {
+    if (multiple) {
+      setSelectedColors((prev) =>
+        prev.includes(color)
+          ? prev.filter((c) => c !== color)
+          : [...prev, color]
+      );
+    } else {
+      setSelectedColors([color]);
+    }
+  };
 
   return (
-    <div className="flex gap-4">
-      {colors.map((color) => (
-        <label
-          key={color}
-          className="relative flex items-center justify-center cursor-pointer"
-        >
-          <input
-            type="radio"
-            name="color"
-            value={color}
-            checked={selectedColor === color}
-            onChange={() => setSelectedColor(color)}
-            className="sr-only"
-          />
-          <span
-            className="w-6 h-6 rounded-full border-2 border-transparent"
+    <div className="flex gap-4 flex-wrap">
+      {colors.map((color) => {
+        const isSelected = selectedColors.includes(color);
+        return (
+          <button
+            key={color}
+            type="button"
+            onClick={() => toggleColor(color)}
+            className={`w-7 h-7 rounded-full transition 
+              ${
+                isSelected
+                  ? "outline outline-1 outline-offset-2 outline-black"
+                  : ""
+              }
+            `}
             style={{ backgroundColor: color }}
-          ></span>
-          {selectedColor === color && (
-            <span className="absolute w-8 h-8 rounded-full border border-black pointer-events-none"></span>
-          )}
-        </label>
-      ))}
+          />
+        );
+      })}
     </div>
   );
 }

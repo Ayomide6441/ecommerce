@@ -35,7 +35,7 @@ function FilterSection({ onFilterChange }: Props) {
   return (
     <div className="border p-5 w-64 flex flex-col gap-10 ">
       <CategoriesFilter onChange={setCategories} />
-      <ColorPicker colors={colorOptions} onChange={setColors} />
+      <ColorPicker multiple colors={colorOptions} onChange={setColors} />
       <SizeFilter onChange={setSizes} />
       <PriceRangeFilter onChange={setPriceRange} />
     </div>
