@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 type SingleProps = {
   colors: string[];
@@ -15,13 +16,16 @@ type MultiProps = {
 type Props = SingleProps | MultiProps;
 
 export default function ColorPicker({ colors, onChange, multiple }: Props) {
-  const [selectedColors, setSelectedColors] = useState<string[]>([]);
+  const [searchParams] = useSearchParams();
+  const [selectedColors, setSelectedColors] = useState<string[]>(
+    searchParams.get("color")?.split(",") || []
+  );
 
   useEffect(() => {
     if (multiple) {
-      (onChange as (val: string[]) => void)(selectedColors);
+      onChange(selectedColors);
     } else {
-      (onChange as (val: string) => void)(selectedColors[0] || "");
+      onChange(selectedColors[0] || "");
     }
   }, [selectedColors, multiple, onChange]);
 
@@ -50,7 +54,7 @@ export default function ColorPicker({ colors, onChange, multiple }: Props) {
               ${
                 isSelected
                   ? "outline outline-1 outline-offset-2 outline-black"
-                  : ""
+                  : "border-gray-300"
               }
             `}
             style={{ backgroundColor: color }}

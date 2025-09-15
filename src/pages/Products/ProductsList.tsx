@@ -2,13 +2,6 @@ import { useProducts } from "@/Hooks/useProducts";
 import ProductItem from "@/components/ui/ProductItem";
 import { Link } from "react-router-dom";
 
-type FilterValues = {
-  categories: string[];
-  colors: string[];
-  sizes: string[];
-  priceRange: [number, number];
-};
-
 type Product = {
   id: number;
   name: string;
@@ -22,11 +15,8 @@ type Product = {
   rating: number;
   status: boolean;
 };
-type Props = {
-  filters: FilterValues | null;
-};
 
-function ProductsList({ filters }: Props) {
+function ProductsList() {
   // console.log(filters);
   const { data: products, isLoading } = useProducts();
   if (isLoading) return <div>Loading...</div>;

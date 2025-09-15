@@ -19,18 +19,16 @@ type Props = SingleProps | MultiProps;
 export default function SizePicker({ onChange, sizes, multiple }: Props) {
   const [searchParams] = useSearchParams();
   const initial = multiple
-    ? searchParams.getAll("size")
+    ? searchParams.get("size")?.split(",") ?? []
     : [searchParams.get("size") || ""];
 
-  const [selectedSizes, setSelectedSizes] = useState<string[]>(
-    initial.filter(Boolean)
-  );
+  const [selectedSizes, setSelectedSizes] = useState<string[]>(initial);
 
   useEffect(() => {
     if (multiple) {
-      (onChange as (val: string[]) => void)(selectedSizes);
+      onChange(selectedSizes);
     } else {
-      (onChange as (val: string) => void)(selectedSizes[0] || "");
+      onChange(selectedSizes[0] || "");
     }
   }, [selectedSizes, multiple, onChange]);
 
