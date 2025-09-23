@@ -46,13 +46,14 @@ type FormValues = {
 };
 type Props = {
   onChange: (selected: string[]) => void;
+  categories: string[];
 };
 
-function CategoriesFilter({ onChange }: Props) {
+function CategoriesFilter({ onChange, categories }: Props) {
   // 3. Pass form type to useForm
   const form = useForm<FormValues>({
     defaultValues: {
-      items: [],
+      items: (categories as ItemId[]) ?? [],
     },
   });
 
