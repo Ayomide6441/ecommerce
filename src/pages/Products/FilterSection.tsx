@@ -48,7 +48,7 @@ function FilterSection() {
 
   return (
     <div className="border p-5 w-64 flex flex-col gap-10 ">
-      <CategoriesFilter onChange={setCategories} categories={categories} />
+      <CategoriesFilter onChange={setCategories} urlCategories={categories} />
       <ColorPicker multiple colors={colorOptions} onChange={setColors} />
       <SizeFilter onChange={setSizes} />
       <PriceRangeFilter value={priceRange} onChange={setPriceRange} />

@@ -10,56 +10,37 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { useCategories } from "@/Hooks/useCategories";
 
-const items = [
-  {
-    id: "perfume",
-    label: "Perfume",
-  },
-  {
-    id: "trousers",
-    label: "Trousers",
-  },
-  {
-    id: "shoe",
-    label: "Shoe",
-  },
-  {
-    id: "desktop",
-    label: "Desktop",
-  },
-  {
-    id: "handbag",
-    label: "Handbag",
-  },
-  {
-    id: "hat",
-    label: "Hat",
-  },
-] as const;
-
-type ItemId = (typeof items)[number]["id"];
-
-// 2. Define form schema type
-type FormValues = {
-  items: ItemId[];
-};
 type Props = {
   onChange: (selected: string[]) => void;
-  categories: string[];
+  urlCategories: string[];
 };
 
-function CategoriesFilter({ onChange, categories }: Props) {
-  // 3. Pass form type to useForm
+type Category = {
+  id: number;
+  name: string;
+};
+
+type FormValues = {
+  items: string[];
+};
+
+function CategoriesFilter({ onChange, urlCategories }: Props) {
+  const { data: categories = [] } = useCategories();
+
+  // 1. Set default values from URL (strings)
   const form = useForm<FormValues>({
     defaultValues: {
-      items: (categories as ItemId[]) ?? [],
+      items: urlCategories ?? [],
     },
   });
 
-  function handleChange(data: { items: string[] }) {
-    onChange(data.items); // Pass selected categories up
+  // 2. Pass data up on form change
+  function handleChange(data: FormValues) {
+    onChange(data.items);
   }
+
   return (
     <Form {...form}>
       <form onChange={form.handleSubmit(handleChange)} className="space-y-8">
@@ -71,40 +52,43 @@ function CategoriesFilter({ onChange, categories }: Props) {
               <div className="mb-3">
                 <FormLabel className="text-base">Categories</FormLabel>
               </div>
-              {items.map((item) => (
-                <FormField
-                  key={item.id}
-                  control={form.control}
-                  name="items"
-                  render={({ field }) => {
-                    return (
+              {categories.map((category: Category) => {
+                return (
+                  <FormField
+                    key={category.id}
+                    control={form.control}
+                    name="items"
+                    render={({ field }) => (
                       <FormItem
-                        key={item.id}
+                        key={category.id}
                         className="flex space-x-3 space-y-0 py-3 items-center border-b-[0.3px]"
                       >
                         <FormControl>
                           <Checkbox
                             className="border-[#E6E7E8] rounded-xs"
-                            checked={field.value?.includes(item.id)}
+                            checked={field.value?.includes(category.name)}
                             onCheckedChange={(checked) => {
                               return checked
-                                ? field.onChange([...field.value, item.id])
+                                ? field.onChange([
+                                    ...field.value,
+                                    category.name,
+                                  ])
                                 : field.onChange(
                                     field.value?.filter(
-                                      (value) => value !== item.id
+                                      (value) => value !== category.name
                                     )
                                   );
                             }}
                           />
                         </FormControl>
                         <FormLabel>
-                          <Text variant="body-1">{item.label}</Text>
+                          <Text variant="body-1">{category.name}</Text>
                         </FormLabel>
                       </FormItem>
-                    );
-                  }}
-                />
-              ))}
+                    )}
+                  />
+                );
+              })}
               <FormMessage />
             </FormItem>
           )}

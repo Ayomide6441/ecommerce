@@ -1,10 +1,16 @@
 {
   "categories": [
-    { "id": 1, "name": "Best goat" },
+    { "id": 1, "name": "Best Selling" },
     { "id": 2, "name": "Featured" },
     { "id": 3, "name": "Latest" },
     { "id": 4, "name": "T-Shirts" },
-    { "id": 5, "name": "Jackets" }
+    { "id": 5, "name": "Jackets" },
+    { "id": 6, "name": "Perfume" },
+    { "id": 7, "name": "Trousers" },
+    { "id": 8, "name": "Shoe" },
+    { "id": 9, "name": "Desktop" },
+    { "id": 10, "name": "Handbag" },
+    { "id": 11, "name": "Hat" }
   ],
   "products": [
     {
