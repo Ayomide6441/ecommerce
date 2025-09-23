@@ -5,7 +5,7 @@ import { Heart, ShoppingCart } from "lucide-react";
 type ProductItemProps = {
   image: string;
   productName: string;
-  inStock: boolean;
+  inStock: string;
   price: number;
 };
 
