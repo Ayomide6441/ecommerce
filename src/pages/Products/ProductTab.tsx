@@ -62,8 +62,6 @@ function ProductTab({ reviews, rating }: ProductTabProps) {
     setSearchParams(params, { replace: true });
   }, [currentTab, searchParams, setSearchParams]);
 
-  console.log(reviews);
-
   return (
     <Tabs
       value={currentTab}

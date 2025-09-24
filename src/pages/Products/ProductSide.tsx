@@ -1,7 +1,17 @@
 import { Text } from "@/components/ui/text";
 import ColorPicker from "../../components/ui/ColorPicker";
+import CartSheetItems from "./CartSheetItems";
 import SizePicker from "@/components/ui/sizePicker";
 import ItemCounter from "@/components/ui/ItemCounter";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Heart, Share2 } from "lucide-react";
@@ -10,7 +20,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 const colorOptions = ["#AFCBFF", "#FFD88D", "#92B69E", "#3B82F6"];
 
 type Product = {
@@ -125,7 +135,33 @@ function ProductSide({ product, rating, reviews }: ProductSideProps) {
         </div>
 
         <div className="flex gap-4">
-          <Button className="w-[284px]">Add to cart</Button>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button className="w-[284px]">Add to cart</Button>
+            </SheetTrigger>
+            <SheetContent className="flex flex-col w-full ">
+              <SheetHeader>
+                <SheetTitle>Shopping Cart</SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-1 auto-rows-min gap-6">
+                <CartSheetItems />
+              </div>
+
+              <SheetFooter className="grid gap-4 w-full sm:justify-stretch">
+                <Separator />
+                <div className="flex justify-between">
+                  <Text variant="body-2">Total</Text>
+                  <Text variant="body-2">$97.00</Text>
+                </div>
+                <Button asChild type="submit" className="w-full">
+                  <Link to="/cart">View Cart</Link>
+                </Button>
+                <Button variant="link" className="w-fit sm:justify-self-center">
+                  Checkout
+                </Button>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
           <Button variant="outline" className="max-w-fit ">
             <Heart width={20} height={20} strokeWidth={1} />
           </Button>
