@@ -10,8 +10,26 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { useCategories } from "@/Hooks/useCategories";
+
+function ListItem({
+  title,
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+  return (
+    <li {...props} className="p-4">
+      <NavigationMenuLink asChild className="">
+        <Link to={href}>
+          <div className="text-sm leading-none font-medium">{title}</div>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+}
 
 function Header() {
+  const { data: categories } = useCategories();
   return (
     <div>
       <div className="bg-black text-center ">
@@ -45,7 +63,15 @@ function Header() {
                   <Text variant="body-2">Categories</Text>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <NavigationMenuLink>Link</NavigationMenuLink>
+                  <ul className="grid w-[400px] gap-2 md:grid-cols-2 z-auto">
+                    {categories?.map((category) => (
+                      <ListItem
+                        key={category.id}
+                        title={category.name}
+                        href={`/products?categories=${category.name}`}
+                      />
+                    ))}
+                  </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>

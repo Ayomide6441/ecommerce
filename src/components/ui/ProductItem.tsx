@@ -29,7 +29,7 @@ function ProductItem({ image, productName, inStock, price }: ProductItemProps) {
           alt={productName}
           width={234}
           height={312}
-          className="object-contain p-4 relative z-10"
+          className="object-contain p-4 relative"
         />
 
         {/* Overlay */}
