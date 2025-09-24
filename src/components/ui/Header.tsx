@@ -46,12 +46,12 @@ function Header() {
               className="w-28 h-auto sm:w-auto"
             />
           </Link>
-          <NavigationMenu className="hidden min-[1020px]:block">
-            <NavigationMenuList className="gap-0 lg:gap-3">
+          <NavigationMenu className="hidden min-[1020px]:block ">
+            <NavigationMenuList className="gap-0 lg:gap-6">
               <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
-                  className="transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent px-4 py-2 rounded-md focus:text-accent-foreground focus:outline-none"
+                  className="transition opacity-75 hover:opacity-100"
                 >
                   <Text variant="body-2" asChild>
                     <Link to="/">Home</Link>
@@ -59,7 +59,7 @@ function Header() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>
+                <NavigationMenuTrigger className="transition opacity-75 hover:opacity-100 px-0 py-0 bg-transparent hover:bg-transparent focus:bg-transparent focus:outline-none focus:text-inherit disabled:pointer-events-none disabled:opacity-50">
                   <Text variant="body-2">Categories</Text>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -77,7 +77,7 @@ function Header() {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
-                  className="transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent px-4 py-2 rounded-md focus:text-accent-foreground focus:outline-none"
+                  className="transition opacity-75 hover:opacity-100"
                 >
                   <Text variant="body-2" asChild>
                     <Link to="/">About</Link>
@@ -87,7 +87,7 @@ function Header() {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
-                  className="transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent px-4 py-2 rounded-md focus:text-accent-foreground focus:outline-none"
+                  className="transition opacity-75 hover:opacity-100"
                 >
                   <Text variant="body-2" asChild>
                     <Link to="/">Contact</Link>
