@@ -17,6 +17,7 @@ import ForgotPassword from "./pages/Auth/ForgotPassword";
 import ProductsLayout from "./pages/Products/ProductsLayout";
 import Product from "./pages/Products/Product";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { Toaster } from "./components/ui/sonner";
 
 const queryClient = new QueryClient();
 
@@ -110,6 +111,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <RouterProvider router={router} />
+        <Toaster position="top-center" richColors />
       </TooltipProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

@@ -14,13 +14,14 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { Heart, Share2 } from "lucide-react";
+import { Heart } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Link, useSearchParams } from "react-router-dom";
+import { ShareUrlButton } from "@/components/ui/ShareUrlButton";
 const colorOptions = ["#AFCBFF", "#FFD88D", "#92B69E", "#3B82F6"];
 
 type Product = {
@@ -170,9 +171,7 @@ function ProductSide({ product, rating, reviews }: ProductSideProps) {
       <div>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost" className="max-w-fit ">
-              <Share2 strokeWidth={1} />
-            </Button>
+            <ShareUrlButton />
           </TooltipTrigger>
           <TooltipContent>
             <p>Share with friends</p>
