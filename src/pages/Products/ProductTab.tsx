@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Text } from "@/components/ui/text";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { formatRelativeDate } from "@/utils/helpers";
 import StarRating from "@/components/ui/StarRating";
+import WriteReviewButton from "./WriteReviewButton";
 
 interface User {
   addresses: any[];
@@ -130,9 +130,7 @@ function ProductTab({ reviews, rating }: ProductTabProps) {
             </Text>
           </div>
           <div className="flex justify-between items-baseline py-6">
-            <Button variant="outline" className="">
-              <Text variant="body-1">Write a review</Text>
-            </Button>
+            <WriteReviewButton />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Text variant="label-2">Sort By</Text>
