@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogFooter,
   DialogHeader,
@@ -37,7 +36,7 @@ function WriteReviewButton() {
           </div>
         </div>
         <DialogFooter className="justify-stretch items-stretch ">
-          <Button variant="secondary">Submit</Button>
+          <Button>Submit</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
