@@ -44,7 +44,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/vite": "^4.1.14",
     "@types/node": "^20.12.12",
     "@types/react": "19.2.0",
     "@types/react-dom": "19.2.0",
@@ -54,7 +54,6 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "postcss": "^8.4.38",
     "tailwindcss": "^4.1.14",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
