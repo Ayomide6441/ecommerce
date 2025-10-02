@@ -53,7 +53,7 @@ export default function ColorPicker({ colors, onChange, multiple }: Props) {
             className={`w-7 h-7 rounded-full transition 
               ${
                 isSelected
-                  ? "outline outline-1 outline-offset-2 outline-black"
+                  ? "outline-solid outline-1 outline-offset-2 outline-black"
                   : "border-gray-300"
               }
             `}

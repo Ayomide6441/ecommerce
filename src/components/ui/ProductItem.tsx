@@ -11,7 +11,7 @@ type ProductItemProps = {
 
 function ProductItem({ image, productName, inStock, price }: ProductItemProps) {
   return (
-    <div className="flex flex-col gap-3 w-full max-w-[17rem] mx-auto relative group">
+    <div className="flex flex-col gap-3 w-full max-w-68 mx-auto relative group">
       {/* Heart (Like button) */}
       <Button
         variant="ghost"
@@ -40,7 +40,7 @@ function ProductItem({ image, productName, inStock, price }: ProductItemProps) {
 
         {/* Add to Cart button */}
         <span
-          className="absolute bottom-[-100%] w-full z-20 
+          className="absolute -bottom-full w-full z-20 
           group-hover:bottom-0 transition-all duration-300 ease-out"
         >
           <Button className="w-full gap-2 rounded-t-none">

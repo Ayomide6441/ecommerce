@@ -2,7 +2,7 @@ import { Text } from "@/components/ui/text";
 
 function About() {
   return (
-    <div className="container flex flex-wrap justify-between gap-x-12 gap-y-12 mb-24 [&>*]:flex-1 [&>*]:min-w-[240px] md:[&>*]:max-w-[300px] ">
+    <div className="container flex flex-wrap justify-between gap-x-12 gap-y-12 mb-24 *:flex-1 *:min-w-[240px] md:*:max-w-[300px] ">
       <div className="flex flex-col gap-2">
         <img src="../shipping.svg" alt="" className="h-12 w-fit" />
         <Text variant="heading-5">Free Shipping</Text>

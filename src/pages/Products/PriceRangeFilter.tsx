@@ -28,7 +28,7 @@ export default function PriceRangeFilter({ value, onChange }: Props) {
         {value.map((_, i) => (
           <Slider.Thumb
             key={i}
-            className="block w-3 h-3 bg-primary rounded-full shadow focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            className="block w-3 h-3 bg-primary rounded-full shadow-sm focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2"
           />
         ))}
       </Slider.Root>

@@ -59,7 +59,7 @@ function Header() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="transition opacity-75 hover:opacity-100 px-0 py-0 bg-transparent hover:bg-transparent focus:bg-transparent focus:outline-none focus:text-inherit disabled:pointer-events-none disabled:opacity-50">
+                <NavigationMenuTrigger className="transition opacity-75 hover:opacity-100 px-0 py-0 bg-transparent hover:bg-transparent focus:bg-transparent focus:outline-hidden focus:text-inherit disabled:pointer-events-none disabled:opacity-50">
                   <Text variant="body-2">Categories</Text>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
