@@ -1,4 +1,4 @@
-import { Text } from "./text";
+import { Text } from "@/components/ui/text";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 

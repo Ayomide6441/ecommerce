@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import CategoriesFilter from "./CategoriesFilter";
-import ColorPicker from "../../components/ui/ColorPicker";
+import ColorPicker from "../../components/common/color-picker";
 import PriceRangeFilter from "./PriceRangeFilter";
 import SizeFilter from "./SizeFilter";
 

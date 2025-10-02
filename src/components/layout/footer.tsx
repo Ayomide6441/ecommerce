@@ -1,4 +1,4 @@
-import { Text } from "./text";
+import { Text } from "@/components/ui/text";
 import { Link } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
 

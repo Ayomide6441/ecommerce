@@ -1,8 +1,8 @@
 import { Text } from "@/components/ui/text";
-import ColorPicker from "../../components/ui/ColorPicker";
+import ColorPicker from "../../components/common/color-picker";
 import CartSheetItems from "./CartSheetItems";
-import SizePicker from "@/components/ui/sizePicker";
-import ItemCounter from "@/components/ui/ItemCounter";
+import SizePicker from "@/components/common/size-picker";
+import ItemCounter from "@/components/common/item-counter";
 import {
   Sheet,
   SheetContent,
@@ -21,7 +21,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Link, useSearchParams } from "react-router-dom";
-import { ShareUrlButton } from "@/components/ui/ShareUrlButton";
+import { ShareUrlButton } from "@/components/common/share-url-button";
 const colorOptions = ["#AFCBFF", "#FFD88D", "#92B69E", "#3B82F6"];
 
 type Product = {

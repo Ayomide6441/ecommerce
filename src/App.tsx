@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import AppLayout from "./components/ui/AppLayout";
+import AppLayout from "./components/layout/app-layout";
 import Home from "./pages/home/Home";
 import Cart from "./pages/cart/Cart";
 import AccountLayout from "./pages/account/AccountLayout";
@@ -17,7 +17,7 @@ import ForgotPassword from "./pages/auth/ForgotPassword";
 import ProductsLayout from "./pages/products/ProductsLayout";
 import Product from "./pages/products/Product";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
-import { Toaster } from "./components/ui/sonner";
+import { Toaster } from "./components/common/sonner";
 
 const queryClient = new QueryClient();
 

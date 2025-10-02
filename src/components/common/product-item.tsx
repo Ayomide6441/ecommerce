@@ -1,5 +1,5 @@
-import { Button } from "./button";
-import { Text } from "./text";
+import { Button } from "@/components/ui/button";
+import { Text } from "@/components/ui/text";
 import { Heart, ShoppingCart } from "lucide-react";
 
 type ProductItemProps = {

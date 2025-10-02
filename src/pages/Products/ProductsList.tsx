@@ -1,6 +1,6 @@
 import { useCategories } from "@/hooks/useCategories";
 import { useProducts } from "@/hooks/useProducts";
-import ProductItem from "@/components/ui/ProductItem";
+import ProductItem from "@/components/common/product-item";
 import { Link, useSearchParams } from "react-router-dom";
 
 type Product = {

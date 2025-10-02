@@ -1,5 +1,5 @@
 "use client";
-import HeaderBreadCrumb from "@/components/ui/HeaderBreadCrumb";
+import HeaderBreadCrumb from "@/components/layout/header-breadcrumb";
 import { Button } from "@/components/ui/button";
 
 import { zodResolver } from "@hookform/resolvers/zod";

@@ -1,4 +1,4 @@
-import ProductItem from "@/components/ui/ProductItem";
+import ProductItem from "@/components/common/product-item";
 
 function FeaturedList() {
   return (

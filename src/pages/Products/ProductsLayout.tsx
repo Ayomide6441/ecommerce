@@ -1,4 +1,4 @@
-import HeaderBreadCrumb from "@/components/ui/HeaderBreadCrumb";
+import HeaderBreadCrumb from "@/components/layout/header-breadcrumb";
 import FilterSection from "./FilterSection";
 import ProductsList from "./ProductsList";
 

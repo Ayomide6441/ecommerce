@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { formatRelativeDate } from "@/utils/helpers";
-import StarRating from "@/components/ui/StarRating";
+import StarRating from "@/components/common/star-rating";
 import WriteReviewButton from "./WriteReviewButton";
 
 interface User {

@@ -1,7 +1,7 @@
 import CartList from "./CartList";
 import OrderSummary from "./OrderSummary";
 import EmptyCart from "./EmptyCart";
-import HeaderBreadCrumb from "@/components/ui/HeaderBreadCrumb";
+import HeaderBreadCrumb from "@/components/layout/header-breadcrumb";
 
 function Cart() {
   const cart = ["yoo"];

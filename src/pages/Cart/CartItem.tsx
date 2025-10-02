@@ -1,4 +1,4 @@
-import ItemCounter from "@/components/ui/ItemCounter";
+import ItemCounter from "@/components/common/item-counter";
 import { Text } from "@/components/ui/text";
 import { useState } from "react";
 

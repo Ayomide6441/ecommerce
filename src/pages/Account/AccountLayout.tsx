@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import HeaderBreadCrumb from "@/components/ui/HeaderBreadCrumb";
+import HeaderBreadCrumb from "@/components/layout/header-breadcrumb";
 
 function AccountLayout() {
   return (
