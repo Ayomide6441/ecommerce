@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import HeaderBreadCrumb from "@/components/ui/HeaderBreadCrumb";
-import { useProductDetail, useProductReview } from "@/Hooks/useProducts";
+import { useProductDetail, useProductReview } from "@/hooks/useProducts";
 
 import ProductCarousel from "./ProductCarousel";
 import ProductSide from "./ProductSide";

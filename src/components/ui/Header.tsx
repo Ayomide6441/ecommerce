@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { useCategories } from "@/Hooks/useCategories";
+import { useCategories } from "@/hooks/useCategories";
 
 function ListItem({
   title,

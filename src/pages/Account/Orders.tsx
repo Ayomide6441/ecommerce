@@ -1,4 +1,4 @@
-import OrderList from "@/Features/Order/OrderList";
+import OrderList from "@/features/order/OrderList";
 import { Text } from "@/components/ui/text";
 
 function Orders() {

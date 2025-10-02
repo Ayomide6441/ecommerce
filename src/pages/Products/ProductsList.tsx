@@ -1,5 +1,5 @@
-import { useCategories } from "@/Hooks/useCategories";
-import { useProducts } from "@/Hooks/useProducts";
+import { useCategories } from "@/hooks/useCategories";
+import { useProducts } from "@/hooks/useProducts";
 import ProductItem from "@/components/ui/ProductItem";
 import { Link, useSearchParams } from "react-router-dom";
 

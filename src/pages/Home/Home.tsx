@@ -1,4 +1,4 @@
-import Hero from "@/pages/Home/Hero";
+import Hero from "@/pages/home/Hero";
 import About from "./About";
 import BestSelling from "./BestSelling";
 import Cta from "./Cta";

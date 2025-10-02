@@ -10,7 +10,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useCategories } from "@/Hooks/useCategories";
+import { useCategories } from "@/hooks/useCategories";
 
 type Props = {
   onChange: (selected: string[]) => void;
