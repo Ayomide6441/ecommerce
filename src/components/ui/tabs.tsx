@@ -134,10 +134,16 @@ type TabsListProps = React.ComponentPropsWithoutRef<
   variant?: "horizontal" | "vertical";
 };
 
-const TabsList = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.List>,
-  TabsListProps
->(({ className, variant = "horizontal", ...props }, ref) => {
+const TabsList = (
+  {
+    ref,
+    className,
+    variant = "horizontal",
+    ...props
+  }: TabsListProps & {
+    ref: React.RefObject<React.ElementRef<typeof TabsPrimitive.List>>;
+  }
+) => {
   const baseStyles =
     variant === "vertical"
       ? "flex flex-col gap-1 p-2 min-w-[180px] bg-white dark:bg-[#0C0A09]"
@@ -152,13 +158,18 @@ const TabsList = React.forwardRef<
       />
     </TabsVariantContext.Provider>
   );
-});
+};
 TabsList.displayName = TabsPrimitive.List.displayName;
 
-const TabsTrigger = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => {
+const TabsTrigger = (
+  {
+    ref,
+    className,
+    ...props
+  }: React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> & {
+    ref: React.RefObject<React.ElementRef<typeof TabsPrimitive.Trigger>>;
+  }
+) => {
   const variant = React.useContext(TabsVariantContext);
 
   const verticalStyles = cn(
@@ -179,22 +190,25 @@ const TabsTrigger = React.forwardRef<
       {...props}
     />
   );
-});
+};
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
-const TabsContent = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Content
-    ref={ref}
-    className={cn(
-      "mt-2 ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-      className
-    )}
-    {...props}
-  />
-));
+const TabsContent = (
+  {
+    ref,
+    className,
+    ...props
+  }: React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content> & {
+    ref: React.RefObject<React.ElementRef<typeof TabsPrimitive.Content>>;
+  }
+) => (<TabsPrimitive.Content
+  ref={ref}
+  className={cn(
+    "mt-2 ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+    className
+  )}
+  {...props}
+/>);
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
 export { Tabs, TabsList, TabsTrigger, TabsContent };

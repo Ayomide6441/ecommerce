@@ -30,19 +30,27 @@ export interface TextProps
   asChild?: boolean;
 }
 
-const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
-  ({ className, variant, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "p";
-    return (
-      // @ts-expect-error
-      <Comp
-        className={cn(textVariants({ variant, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
+const Text = (
+  {
+    ref,
+    className,
+    variant,
+    asChild = false,
+    ...props
+  }: TextProps & {
+    ref: React.RefObject<HTMLParagraphElement>;
   }
-);
+) => {
+  const Comp = asChild ? Slot : "p";
+  return (
+    // @ts-expect-error
+    (<Comp
+      className={cn(textVariants({ variant, className }))}
+      ref={ref}
+      {...props}
+    />)
+  );
+};
 Text.displayName = "Text";
 
 export { Text, textVariants };
