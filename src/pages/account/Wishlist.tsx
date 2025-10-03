@@ -1,4 +1,4 @@
-import WishListBox from "@/features/wishList/WishListBox";
+import WishListBox from "@/features/wish-list/WishListBox";
 import { Text } from "@/components/ui/text";
 
 function Wishlist() {

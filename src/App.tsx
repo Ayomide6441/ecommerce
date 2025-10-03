@@ -8,7 +8,7 @@ import AccountLayout from "./pages/account/AccountLayout";
 import Detail from "./pages/account/Detail";
 import Orders from "./pages/account/Orders";
 import Password from "./pages/account/Password";
-import Wishlist from "./pages/account/Wishlist";
+import Wishlist from "./pages/account/WishList";
 import Address from "./pages/account/Address";
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
