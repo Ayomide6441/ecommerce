@@ -201,6 +201,12 @@ importers:
       lucide-react:
         specifier: ^0.544.0
         version: 0.544.0(react@19.2.0)
+      react:
+        specifier: 19.2.0
+        version: 19.2.0
+      react-dom:
+        specifier: 19.2.0
+        version: 19.2.0(react@19.2.0)
       react-hook-form:
         specifier: ^7.63.0
         version: 7.64.0(react@19.2.0)
@@ -213,6 +219,13 @@ importers:
       zod:
         specifier: ^3.23.8
         version: 3.25.76
+    devDependencies:
+      '@types/react':
+        specifier: 19.2.0
+        version: 19.2.0
+      '@types/react-dom':
+        specifier: 19.2.0
+        version: 19.2.0(@types/react@19.2.0)
 
 packages:
 
