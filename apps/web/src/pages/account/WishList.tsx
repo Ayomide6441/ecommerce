@@ -1,5 +1,5 @@
 import WishListBox from "@/features/wish-list/WishListBox";
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 
 function Wishlist() {
   return (

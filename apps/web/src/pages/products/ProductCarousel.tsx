@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@ecommerce/ui/components/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@ecommerce/ui/components/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 function ProductCarousel({ images = [] }: { images?: string[] }) {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 
 type CounterProps = {
   onClick: (value: number) => void;

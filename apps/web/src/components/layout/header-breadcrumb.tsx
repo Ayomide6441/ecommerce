@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "@ecommerce/ui/components/breadcrumb";
 
 type urls = {
   previous: { [key: string]: string };

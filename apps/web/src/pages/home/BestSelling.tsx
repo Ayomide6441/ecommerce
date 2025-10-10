@@ -1,5 +1,5 @@
 import ProductItem from "@/components/common/product-item";
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 
 function BestSelling() {
   return (

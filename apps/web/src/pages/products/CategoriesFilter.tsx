@@ -1,7 +1,7 @@
 "use client";
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 import { useForm } from "react-hook-form";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Checkbox } from "@ecommerce/ui/components/checkbox";
 import {
   Form,
   FormControl,
@@ -9,7 +9,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@ecommerce/ui/components/form";
 import { useCategories } from "@/hooks/useCategories";
 
 type Props = {

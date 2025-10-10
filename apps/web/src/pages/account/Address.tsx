@@ -2,8 +2,8 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui/text";
+import { Button } from "@ecommerce/ui/components/button";
+import { Text } from "@ecommerce/ui/components/text";
 import {
   Form,
   FormControl,
@@ -11,8 +11,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from "@ecommerce/ui/components/form";
+import { Input } from "@ecommerce/ui/components/input";
 import { z } from "zod";
 
 const formSchema = z.object({

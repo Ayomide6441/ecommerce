@@ -1,4 +1,9 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@ecommerce/ui/components/tabs";
 import FeaturedList from "./FeaturedList";
 import LatestList from "./LatestList";
 

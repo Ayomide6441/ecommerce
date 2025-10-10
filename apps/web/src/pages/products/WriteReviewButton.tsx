@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui/text";
+import { Button } from "@ecommerce/ui/components/button";
+import { Text } from "@ecommerce/ui/components/text";
 import {
   Dialog,
   DialogContent,
@@ -7,9 +7,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+} from "@ecommerce/ui/components/dialog";
+import { Label } from "@ecommerce/ui/components/label";
+import { Textarea } from "@ecommerce/ui/components/textarea";
 
 function WriteReviewButton() {
   return (

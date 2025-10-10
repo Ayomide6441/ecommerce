@@ -1,5 +1,5 @@
 import ItemCounter from "@/components/common/item-counter";
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 
 function CartSheetItems() {
   return (

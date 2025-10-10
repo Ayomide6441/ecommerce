@@ -1,4 +1,4 @@
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 import ColorPicker from "../../components/common/color-picker";
 import CartSheetItems from "./CartSheetItems";
 import SizePicker from "@/components/common/size-picker";
@@ -10,16 +10,16 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
+} from "@ecommerce/ui/components/sheet";
+import { Separator } from "@ecommerce/ui/components/separator";
+import { Button } from "@ecommerce/ui/components/button";
 import { useEffect, useState } from "react";
 import { Heart } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@ecommerce/ui/components/tooltip";
 import { Link, useSearchParams } from "react-router-dom";
 import { ShareUrlButton } from "@/components/common/share-url-button";
 const colorOptions = ["#AFCBFF", "#FFD88D", "#92B69E", "#3B82F6"];

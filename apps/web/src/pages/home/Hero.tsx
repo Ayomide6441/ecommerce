@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@ecommerce/ui/components/button";
 import { Link } from "react-router-dom";
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 
 function Hero() {
   return (

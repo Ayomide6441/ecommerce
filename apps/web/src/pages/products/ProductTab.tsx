@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@ecommerce/ui/components/tabs";
 import { Text } from "@ecommerce/ui/components/text";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { Card, CardContent } from "@ecommerce/ui/components/card";
+import { Separator } from "@ecommerce/ui/components/separator";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@ecommerce/ui/components/dropdown-menu";
 import { formatRelativeDate } from "@/utils/helpers";
 import StarRating from "@/components/common/star-rating";
 import WriteReviewButton from "./WriteReviewButton";

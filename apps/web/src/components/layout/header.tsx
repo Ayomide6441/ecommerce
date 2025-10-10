@@ -1,5 +1,5 @@
-import { Text } from "@/components/ui/text";
-import { Input } from "@/components/ui/input";
+import { Text } from "@ecommerce/ui/components/text";
+import { Input } from "@ecommerce/ui/components/input";
 import { Link } from "react-router-dom";
 
 import {
@@ -9,7 +9,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "@ecommerce/ui/components/navigation-menu";
 import { useCategories } from "@/hooks/useCategories";
 
 function ListItem({

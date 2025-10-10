@@ -1,4 +1,4 @@
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 

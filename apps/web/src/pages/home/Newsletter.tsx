@@ -1,6 +1,6 @@
-import { Text } from "@/components/ui/text";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Text } from "@ecommerce/ui/components/text";
+import { Button } from "@ecommerce/ui/components/button";
+import { Input } from "@ecommerce/ui/components/input";
 
 function Newsletter() {
   return (

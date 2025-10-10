@@ -1,5 +1,5 @@
 import OrderList from "@/features/order/OrderList";
-import { Text } from "@/components/ui/text";
+import { Text } from "@ecommerce/ui/components/text";
 
 function Orders() {
   return (

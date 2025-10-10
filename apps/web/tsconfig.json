@@ -25,5 +25,10 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json",
+      "@ecommerce/ui/*": ["../../packages/ui/src/*"]
+    }
+  ]
 }

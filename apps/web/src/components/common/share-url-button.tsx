@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@ecommerce/ui/components/button";
 import { toast } from "sonner";
 import { Share2, Check } from "lucide-react";
 
