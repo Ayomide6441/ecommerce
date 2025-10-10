@@ -3,9 +3,9 @@ import { Text } from "@ecommerce/ui/components/text";
 
 function CartSheetItems() {
   return (
-    <div className="flex flex-col gap-8 mt-4">
+    <div className="flex flex-col gap-8 mt-4 px-5">
       <div className="flex gap-6">
-        <div className="w-20 h-20 bg-gray-100 flex items-center justify-center rounded-lg">
+        <div className="size-16 bg-gray-100 flex items-center justify-center rounded-lg">
           <img
             src="../../../public/cover6.png"
             alt="demo"
@@ -22,7 +22,7 @@ function CartSheetItems() {
         </div>
       </div>
       <div className="flex gap-6">
-        <div className="w-20 h-20 bg-gray-100 flex items-center justify-center rounded-lg">
+        <div className="size-16 bg-gray-100 flex items-center justify-center rounded-lg">
           <img
             src="../../../public/cover1.png"
             alt="demo"

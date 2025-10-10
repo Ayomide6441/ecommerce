@@ -25,15 +25,18 @@ export function ShareUrlButton() {
     <Button
       onClick={handleCopy}
       variant="ghost"
-      className="max-w-fit relative transition-colors bg-transparent hover:bg-transparent"
+      className="max-w-fit relative transition-colors bg-transparent hover:bg-transparent cursor-pointer"
     >
       {copied ? (
         <Check
-          className="text-green-600 transition-opacity duration-200"
+          className="text-green-600 transition-opacity duration-200 size-6"
           strokeWidth={2}
         />
       ) : (
-        <Share2 className="transition-opacity duration-200" strokeWidth={1} />
+        <Share2
+          className="transition-opacity duration-200 size-6"
+          strokeWidth={1}
+        />
       )}
     </Button>
   );

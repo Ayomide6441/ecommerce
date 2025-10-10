@@ -16,9 +16,9 @@ function ProductItem({ image, productName, inStock, price }: ProductItemProps) {
       <Button
         variant="ghost"
         className="absolute top-4 right-4 z-20 transform scale-90 opacity-0 
-        group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 ease-out"
+        group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 ease-out cursor-pointer"
       >
-        <Heart className="cursor-pointer" />
+        <Heart className="size-5" />
       </Button>
 
       {/* Product Image + Overlay + Add to cart */}
@@ -43,7 +43,7 @@ function ProductItem({ image, productName, inStock, price }: ProductItemProps) {
           className="absolute -bottom-full w-full z-20 
           group-hover:bottom-0 transition-all duration-300 ease-out"
         >
-          <Button className="w-full gap-2 rounded-t-none">
+          <Button className="w-full gap-2 rounded-t-none cursor-pointer">
             Add to cart
             <span>
               <ShoppingCart className="w-4 h-4" />

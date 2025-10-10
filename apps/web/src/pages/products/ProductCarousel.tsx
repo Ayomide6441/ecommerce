@@ -12,7 +12,7 @@ function ProductCarousel({ images = [] }: { images?: string[] }) {
   return (
     <div className="w-1/2 container">
       <Carousel
-        className="w-full rounded-md"
+        className="w-full"
         opts={{
           align: "start",
           loop: true,
@@ -26,9 +26,9 @@ function ProductCarousel({ images = [] }: { images?: string[] }) {
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
-              <div className="p-1">
-                <Card className="border-0">
-                  <CardContent className="flex h-[400px]  bg-[#F5F5F5] items-center justify-center ">
+              <div>
+                <Card className="border-0 p-0">
+                  <CardContent className="flex h-[400px]  bg-[#F5F5F5] items-center justify-center rounded-lg">
                     <img
                       src={image}
                       //   alt={images.name}
