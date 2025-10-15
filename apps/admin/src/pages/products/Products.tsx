@@ -4,7 +4,7 @@ import { ArrowUpDown, Check, X } from "lucide-react";
 import { useState } from "react";
 
 // sample data shape
-type Order = {
+type Product = {
   id: number;
   image: string;
   sku: string;
@@ -14,7 +14,7 @@ type Order = {
   featured: boolean;
 };
 
-const sampleOrders: Order[] = [
+const sampleProducts: Product[] = [
   {
     id: 1,
     image: "/placeholder.png",
@@ -41,7 +41,7 @@ function Products() {
   const pageSize = 10;
 
   // simple filter for demo
-  const rows = sampleOrders.filter((r) =>
+  const rows = sampleProducts.filter((r) =>
     r.itemName.toLowerCase().includes(query.toLowerCase())
   );
 
