@@ -32,20 +32,27 @@ export const TableSearch: React.FC<SearchProps> = ({
   React.useEffect(() => setQ(value), [value]);
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("", className)}>
       <Input
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder={placeholder}
         className="w-64"
       />
-      <Button
+      {/* <InputGroup>
+        <InputGroupInput placeholder="Search..." />
+        <InputGroupAddon>
+          <Search />
+        </InputGroupAddon>
+        <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+      </InputGroup> */}
+      {/* <Button
         className="whitespace-nowrap"
         onClick={() => onSearch?.(q)}
         variant="default"
       >
         Search
-      </Button>
+      </Button> */}
     </div>
   );
 };
