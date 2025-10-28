@@ -13,7 +13,7 @@ function Cta() {
             clothing categories.
           </Text>
           <Button asChild className="max-w-fit">
-            <Link to="/">
+            <Link to="/products/3">
               Start Browsing
               <span className="pl-4">
                 <img src="../Arrowright.svg" alt="" />
