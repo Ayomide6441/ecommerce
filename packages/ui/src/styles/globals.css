@@ -55,19 +55,19 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  --B900: hsl(222, 42%, 9%);
-  --B800: hsl(224, 23%, 16%);
-  --B700: hsl(223, 15%, 24%);
-  --B600: hsl(225, 10%, 31%);
-  --B500: hsl(227, 7%, 39%);
-  --B400: hsl(226, 5%, 47%);
-  --B300: hsl(224, 5%, 55%);
-  --B200: hsl(230, 4%, 73%);
-  --B100: hsl(210, 4%, 91%);
+  --b900: hsl(222, 42%, 9%);
+  --b800: hsl(224, 23%, 16%);
+  --b700: hsl(223, 15%, 24%);
+  --b600: hsl(225, 10%, 31%);
+  --b500: hsl(227, 7%, 39%);
+  --b400: hsl(226, 5%, 47%);
+  --b300: hsl(224, 5%, 55%);
+  --b200: hsl(230, 4%, 73%);
+  --b100: hsl(210, 4%, 91%);
 
-  --W900: hsl(0, 0%, 100%);
-  --W100: hsl(0, 0%, 96%);
-  --W200: hsl(240, 5%, 92%);
+  --w900: hsl(0, 0%, 100%);
+  --w100: hsl(0, 0%, 96%);
+  --w200: hsl(240, 5%, 92%);
 }
 
 .dark {
@@ -143,29 +143,29 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --color-B900: var(--B900);
+  --color-b900: var(--b900);
 
-  --color-B800: var(--B800);
+  --color-b800: var(--b800);
 
-  --color-B700: var(--B700);
+  --color-b700: var(--b700);
 
-  --color-B600: var(--B600);
+  --color-b600: var(--b600);
 
-  --color-B500: var(--B500);
+  --color-b500: var(--b500);
 
-  --color-B400: var(--B400);
+  --color-b400: var(--b400);
 
-  --color-B300: var(--B300);
+  --color-b300: var(--b300);
 
-  --color-B200: var(--B200);
+  --color-b200: var(--b200);
 
-  --color-B100: var(--B100);
+  --color-b100: var(--b100);
 
-  --color-W100: var(--W100);
+  --color-w100: var(--w100);
 
-  --color-W200: var(--W200);
+  --color-w200: var(--w200);
 
-  --color-W900: var(--W900);
+  --color-w900: var(--w900);
 }
 
 @layer base {

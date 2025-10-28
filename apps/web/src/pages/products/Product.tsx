@@ -29,7 +29,7 @@ function Product() {
       <HeaderBreadCrumb
         previous={{ Home: "/" }}
         current="Search"
-        className="bg-transparent py-4 border-t container px-0"
+        className="bg-white py-4 border-t container px-0"
       />
       <div className="container flex gap-28 mt-10 items-start ">
         <ProductCarousel images={product.images} />

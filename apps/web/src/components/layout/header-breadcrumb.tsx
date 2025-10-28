@@ -19,7 +19,7 @@ type urls = {
 function HeaderBreadCrumb({ previous, current, route, className }: urls) {
   const entries = Object.entries(previous);
   return (
-    <div className={`bg-W100 py-10 ${className}`}>
+    <div className={`bg-w100 py-10 ${className}`}>
       <div className="container flex flex-col justify-center ">
         <Text variant="heading-3">{route}</Text>
         <Breadcrumb>
