@@ -158,7 +158,7 @@ function ProductTab({ reviews, rating }: ProductTabProps) {
           </div>
           <Separator />
 
-          <div className="mt-6 flex flex-col gap-14">
+          <div className="mt-6 flex flex-col">
             {reviews?.map((review) => (
               <Card key={review.id} className="border-0 shadow-none">
                 <CardContent className="flex items-start gap-4 p-0">
